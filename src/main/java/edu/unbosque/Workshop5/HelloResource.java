@@ -1,4 +1,4 @@
-package edu.unbosque.JPATutorial;
+package edu.unbosque.Workshop5;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

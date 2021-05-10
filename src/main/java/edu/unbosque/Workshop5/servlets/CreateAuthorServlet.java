@@ -1,6 +1,6 @@
-package edu.unbosque.JPATutorial.servlets;
+package edu.unbosque.Workshop5.servlets;
 
-import edu.unbosque.JPATutorial.services.AuthorService;
+import edu.unbosque.Workshop5.services.AuthorService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

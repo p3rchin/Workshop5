@@ -1,8 +1,8 @@
-package edu.unbosque.JPATutorial.servlets;
+package edu.unbosque.Workshop5.servlets;
 
 import com.google.gson.Gson;
-import edu.unbosque.JPATutorial.services.LibraryService;
-import edu.unbosque.JPATutorial.servlets.pojos.LibraryPOJO;
+import edu.unbosque.Workshop5.services.LibraryService;
+import edu.unbosque.Workshop5.servlets.pojos.LibraryPOJO;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

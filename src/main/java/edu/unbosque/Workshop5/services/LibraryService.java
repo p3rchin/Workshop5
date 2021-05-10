@@ -1,10 +1,10 @@
-package edu.unbosque.JPATutorial.services;
+package edu.unbosque.Workshop5.services;
 
-import edu.unbosque.JPATutorial.jpa.entities.Library;
-import edu.unbosque.JPATutorial.jpa.repositories.LibraryRepository;
-import edu.unbosque.JPATutorial.jpa.repositories.LibraryRepositoryImpl;
+import edu.unbosque.Workshop5.jpa.entities.Library;
+import edu.unbosque.Workshop5.jpa.repositories.LibraryRepository;
+import edu.unbosque.Workshop5.jpa.repositories.LibraryRepositoryImpl;
 
-import edu.unbosque.JPATutorial.servlets.pojos.LibraryPOJO;
+import edu.unbosque.Workshop5.servlets.pojos.LibraryPOJO;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

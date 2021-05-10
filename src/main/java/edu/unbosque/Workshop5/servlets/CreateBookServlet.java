@@ -1,6 +1,6 @@
-package edu.unbosque.JPATutorial.servlets;
+package edu.unbosque.Workshop5.servlets;
 
-import edu.unbosque.JPATutorial.services.BookService;
+import edu.unbosque.Workshop5.services.BookService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

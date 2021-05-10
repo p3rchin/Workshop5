@@ -1,4 +1,4 @@
-package edu.unbosque.JPATutorial.servlets.pojos;
+package edu.unbosque.Workshop5.servlets.pojos;
 
 public class LibraryPOJO {
 

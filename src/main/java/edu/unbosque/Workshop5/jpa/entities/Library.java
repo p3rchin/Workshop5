@@ -1,4 +1,4 @@
-package edu.unbosque.JPATutorial.jpa.entities;
+package edu.unbosque.Workshop5.jpa.entities;
 
 import javax.persistence.*;
 import java.util.HashSet;
