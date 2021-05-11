@@ -28,7 +28,7 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
-    @ManyToOne
+    @OneToMany(mappedBy = "author", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "edition_id")
     private Edition edition;
 
