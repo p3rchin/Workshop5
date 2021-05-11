@@ -1,9 +1,7 @@
 package edu.unbosque.Workshop5.jpa.entities;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "Edition") // Optional
