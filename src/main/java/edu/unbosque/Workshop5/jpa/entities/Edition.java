@@ -1,7 +1,9 @@
 package edu.unbosque.Workshop5.jpa.entities;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "Edition") // Optional
@@ -30,9 +32,6 @@ public class Edition {
     // CascadeType.PERSIST: When we save a superhero, its movies will also be saved
     @ManyToMany(mappedBy = "editions", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     private Set<Library> libraries = new HashSet<>();
-
-    @OneToMany(mappedBy = "editions", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Rent> rents = new ArrayList<>();
 
     public Edition() {}
 
