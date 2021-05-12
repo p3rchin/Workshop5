@@ -28,13 +28,12 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
-    @OneToMany(mappedBy = "author", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "edition_id")
-    private Edition edition;
 
     @Column(name = "genre")
     private String genre;
 
+    @OneToMany(mappedBy = "book", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Edition> editions = new ArrayList<>();
 
     public Book() {}
 
@@ -87,12 +86,13 @@ public class Book {
         return genre;
     }
 
-    public Edition getEdition() {
-        return edition;
+    public List<Edition> getEditions() {
+        return editions;
     }
 
-    public void setEdition(Edition edition) {
-        this.edition = edition;
+    public void addEdition(Edition edition) {
+        editions.add(edition);
+        edition.setEditionId(null);
     }
 
     public void setGenre(String genre) {

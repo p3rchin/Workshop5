@@ -22,7 +22,7 @@ public class Customer {
     private String gender;
     @Column(name = "age")
     private Integer age;
-    @OneToMany(mappedBy = "rents", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Rent> rents = new ArrayList<>();
 
     public Customer(){
