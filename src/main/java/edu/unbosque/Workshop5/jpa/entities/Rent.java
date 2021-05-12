@@ -22,6 +22,8 @@ public class Rent {
     private Edition edition;
     @Column(name = "renting_date")
     private Date renting_date;
+    @ManyToOne
+    private Edition editionRent;
     public Rent(){
 
     }
@@ -55,6 +57,14 @@ public class Rent {
 
     public void setEdition(Edition edition) {
         this.edition = edition;
+    }
+
+    public Edition getEditionRent() {
+        return editionRent;
+    }
+
+    public void setEditionRent(Edition editionRent) {
+        this.editionRent = editionRent;
     }
 
     public Date getRenting_date() {
