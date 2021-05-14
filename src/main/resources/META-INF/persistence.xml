@@ -10,6 +10,8 @@
         <class>edu.unbosque.Workshop5.jpa.entities.Book</class>
         <class>edu.unbosque.Workshop5.jpa.entities.Edition</class>
         <class>edu.unbosque.Workshop5.jpa.entities.Library</class>
+        <class>edu.unbosque.Workshop5.jpa.entities.Rent</class>
+        <class>edu.unbosque.Workshop5.jpa.entities.Customer</class>
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="update" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL10Dialect" />

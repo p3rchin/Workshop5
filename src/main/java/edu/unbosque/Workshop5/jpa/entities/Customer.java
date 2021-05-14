@@ -8,7 +8,7 @@ import java.util.List;
 @Table(name = "Customer") // Optional
 @NamedQueries({
         @NamedQuery(name = "Customer.findByEmail",
-                query = "SELECT a FROM Author a WHERE a.name = :name")
+                query = "SELECT a FROM Customer a WHERE a.email = :email")
 })
 public class Customer {
     @Id

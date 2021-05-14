@@ -30,8 +30,9 @@ public class Author {
 
     public Author() {}
 
-    public Author(String name) {
+    public Author(String name, String country) {
         this.name = name;
+        this.country = country;
     }
 
 

@@ -7,7 +7,7 @@ import java.util.Date;
 @Table(name = "Rent") // Optional
 @NamedQueries({
         @NamedQuery(name = "Rent.findByRentId",
-                query = "SELECT a FROM Author a WHERE a.name = :name")
+                query = "SELECT a FROM Rent a WHERE a.renting_date = :renting_date")
 })
 public class Rent {
     @Id
@@ -22,8 +22,7 @@ public class Rent {
     private Edition edition;
     @Column(name = "renting_date")
     private Date renting_date;
-    @ManyToOne
-    private Edition editionRent;
+
     public Rent(){
 
     }
@@ -57,14 +56,6 @@ public class Rent {
 
     public void setEdition(Edition edition) {
         this.edition = edition;
-    }
-
-    public Edition getEditionRent() {
-        return editionRent;
-    }
-
-    public void setEditionRent(Edition editionRent) {
-        this.editionRent = editionRent;
     }
 
     public Date getRenting_date() {

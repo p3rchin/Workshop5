@@ -16,9 +16,10 @@ public class CreateAuthorServlet extends HttpServlet {
         response.setContentType("text/html");
 
         String name = request.getParameter("name");
+        String country = request.getParameter("country");
 
         AuthorService authorService = new AuthorService();
-        authorService.saveAuthor(name);
+        authorService.saveAuthor(name, country);
 
         response.sendRedirect("./index.jsp");
     }

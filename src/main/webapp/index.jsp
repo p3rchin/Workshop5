@@ -64,10 +64,9 @@
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
                                         <li class="active"> <a href="index.jsp">Inicio</a> </li>
-                                        <li> <a href="#autores">Autores</a> </li>
-                                        <li> <a href="#libros"> Libros</a> </li>
-                                        <li> <a href="#clientes">Clientes</a> </li>
-                                        <li> <a href="#librerias">Librerías</a> </li>
+                                        <li> <a href="form-author.jsp">Autores</a> </li>
+                                        <li> <a href="form-customer.jsp">Clientes</a> </li>
+                                        <li> <a href="form-library.jsp">Librerías</a> </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -126,21 +125,14 @@
             </a>
         </div>
     </section>
-
-
-        <h1>Library Manager</h1>
-
-        <button onclick="location.href='./form-library.jsp';">Create library</button>
-        <button onclick="location.href='./form-author.jsp';">Create author</button>
-
-        <h3>Libraries</h3>
-
-        <table id="librariesTbl">
+    <div>
+        <h3>Libreries</h3>
+        <table id="librariesTbl" class="table table-dark table-striped table-bordered">
             <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                </tr>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
             </thead>
             <tbody>
             </tbody>
@@ -148,7 +140,7 @@
 
         <h3>Authors</h3>
 
-        <table id="authorsTbl">
+        <table id="authorsTbl" class="table table-dark table-striped table-bordered">
             <thead>
             <tr>
                 <th>Id</th>
@@ -160,6 +152,26 @@
             <tbody>
             </tbody>
         </table>
+
+        <h3>Customer</h3>
+
+        <table id="customersTbl" class="table table-dark table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Email</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Genero</th>
+                <th>Edad</th>
+                <th># Rentas</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
 
         <script>
 
@@ -190,6 +202,14 @@
                                 action.appendChild(text);
                                 cell.appendChild(action);
                             }
+                            if (actions.includes('create-customer')) {
+                                var cell = newRow.insertCell();
+                                var action = document.createElement('button');
+                                action.setAttribute('onclick', 'location.href="./form-rent.jsp?email=' + d['email'] + '";');
+                                var text = document.createTextNode('Create rent');
+                                action.appendChild(text);
+                                cell.appendChild(action);
+                            }
 
                         });
 
@@ -205,6 +225,9 @@
 
             // Printing authors
             printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name', 'numBooks'], actions = ['create-book']);
+
+            // Printing authors
+            printTable(elementId = 'customersTbl', servlet = 'list-customers', columns = ['email', 'firtsName', 'lastName', 'gender', 'age', 'numeroRentas'], actions = ['create-customer']);
 
         </script>
 
