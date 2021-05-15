@@ -89,7 +89,7 @@
                             <img class="first-slide" src="images/autor.jpg">
                             <div class="container">
                                 <div class="carousel-caption relat">
-                                    <h3>Creación de autores para tu librería</h3>
+                                    <h3>Añade un cliente</h3>
                                     <p>En este espacio podrás crear un autor de libros para tu librería.</p>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Agrega a un autor</h3>
+                    <h3>Agrega a un cliente</h3>
                     <form method="get" action="create-author">
                         <div class="row">
                             <div class="col-sm-12">
@@ -134,6 +134,18 @@
     <input type="submit" value="Create customer!">
 </form>
 
+<div>
+    <form method="get" action="delete-customer">
+        <div class="row">
+            <div class="col-sm-12">
+                <input class="contactus" placeholder="Customer email" type="email" name="customerEmail">
+            </div>
+            <div class="col-sm-12">
+                <input class="send" type="submit" value="Delete customer">
+            </div>
+        </div>
+    </form>
+</div>
 <footr>
     <div class="footer">
         <div class="container">

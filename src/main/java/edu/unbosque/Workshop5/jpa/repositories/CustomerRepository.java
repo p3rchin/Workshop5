@@ -12,4 +12,6 @@ public interface CustomerRepository {
     List<Customer> findAll();
 
     Optional<Customer> save(Customer customer);
+
+    void deleteByEmail(String email);
 }

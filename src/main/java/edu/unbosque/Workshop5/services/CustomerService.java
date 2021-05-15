@@ -62,4 +62,15 @@ public class CustomerService {
         return persistedCustomer;
 
     }
+
+    public void deleteCustomer(String email){
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        customerRepository = new CustomerRepositoryImpl(entityManager);
+        customerRepository.deleteByEmail(email);
+
+        entityManager.close();
+        entityManagerFactory.close();
+    }
 }

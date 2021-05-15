@@ -38,4 +38,25 @@ public class CustomerRepositoryImpl implements CustomerRepository{
         }
         return Optional.empty();
     }
+
+    @Override
+    public void deleteByEmail(String email) {
+        Customer customer = entityManager.find(Customer.class, email);
+        if (customer != null) {
+            try {
+
+                entityManager.getTransaction().begin();
+
+                customer.getRents().forEach(rent -> {
+                    entityManager.remove(rent);
+                });
+
+                entityManager.remove(customer);
+                entityManager.getTransaction().commit();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

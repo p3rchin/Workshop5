@@ -58,4 +58,17 @@ public class AuthorService {
 
     }
 
+    public void deleteAuthor(Integer authorId) {
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        authorRepository = new AuthorRepositoryImpl(entityManager);
+        authorRepository.deleteById(authorId);
+
+        entityManager.close();
+        entityManagerFactory.close();
+
+    }
+
 }

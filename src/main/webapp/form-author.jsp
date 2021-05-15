@@ -116,7 +116,18 @@
     </div>
 </div>
 <!-- end Testimonial -->
-
+<div>
+    <form method="get" action="delete-author">
+        <div class="row">
+            <div class="col-sm-12">
+                <input class="contactus" placeholder="Author id" type="number" name="authorId">
+            </div>
+            <div class="col-sm-12">
+                <input class="send" type="submit" value="Delete author">
+            </div>
+        </div>
+    </form>
+</div>
 <footr>
     <div class="footer">
         <div class="container">
