@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JSP Tutorial</title>
+    <title>Library Manager</title>
 
     <style>
         table, th, td {
