@@ -8,6 +8,7 @@
 <div>
     <form action="./create-book">
         <input type="hidden" id="authorId" name="authorId" value ="<%= request.getParameter("authorId") %>">
+
         Book title: <input type="text" id="title" name="title">
         <br />
         Book ISBN: <input type="text" id="isbn" name="isbn">
@@ -18,7 +19,7 @@
         <br />
         Book date: <input type="date" id="date" name="date">
         <br />
-        <input type="hidden" id="bookId" name="bookId" value ="0">
+        <input type="hidden" id="bookId" name="bookId" value ="14">
         <input type="submit" value="Create book!">
     </form>
 </div>
@@ -31,6 +32,18 @@
     </form>
 </div>
 
+<form action="./update-book">
+    Book Id: <input type="number"  name="bookId">
+    <br />
+    Book title: <input type="text"  name="title">
+    <br />
+    Book ISBN: <input type="text" name="isbn">
+    <br />
+    Book genre: <input type="text"  name="genre">
+    <br />
+    <input type="hidden" name="bookId" value ="0">
+    <input type="submit" value="Update book!">
+</form>
 <div>
     <table id="bookTbl" class="table table-dark table-striped table-bordered">
         <thead>
@@ -40,7 +53,6 @@
             <th>ibsn_number</th>
             <th>Genre</th>
             <th>#Editions</th>
-            <th>Author Id</th>
             <th>Actions</th>
         </tr>
         </thead>

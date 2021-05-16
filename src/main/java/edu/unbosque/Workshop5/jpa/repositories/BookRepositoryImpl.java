@@ -77,10 +77,9 @@ public class BookRepositoryImpl implements BookRepository {
         Book book = entityManager.find(Book.class, id);
         if (book != null) {
             try {
-
+                Author author = book.getAuthor();
+                author.eliminarBook(book);
                 entityManager.getTransaction().begin();
-
-                entityManager.remove(book);
                 entityManager.getTransaction().commit();
 
             } catch (Exception e) {
@@ -90,11 +89,12 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public void updateByTitle(String title, String isbn_number, String genre) {
-        Book book = entityManager.find(Book.class, title);
+    public void updateById(Integer id, String title, String isbn_number, String genre) {
+        Book book = entityManager.find(Book.class, id);
         if (book != null) {
             try {
                 entityManager.getTransaction().begin();
+                book.setTitle(title);
                 book.setIsbn(isbn_number);
                 book.setGenre(genre);
                 entityManager.merge(book);

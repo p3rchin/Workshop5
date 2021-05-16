@@ -2,6 +2,7 @@ package edu.unbosque.Workshop5.jpa.repositories;
 
 import edu.unbosque.Workshop5.jpa.entities.Book;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +23,6 @@ public interface BookRepository {
 
     void deleteById(Integer id);
 
-    void updateByTitle(String title, String isbn_number, String genre);
+    void updateById(Integer id, String title, String isbn_number, String genre);
 
 }

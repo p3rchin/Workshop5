@@ -83,12 +83,12 @@ public class BookService {
 
     }
 
-    public void updateBookByTitle(String title, String isbn_number, String genre){
+    public void updateBookById(Integer id, String title, String isbn_number, String genre){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         bookRepository = new BookRepositoryImpl(entityManager);
-        bookRepository.updateByTitle(title, isbn_number, genre);
+        bookRepository.updateById(id, title, isbn_number, genre);
 
         entityManager.close();
         entityManagerFactory.close();

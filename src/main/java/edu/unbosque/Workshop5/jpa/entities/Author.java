@@ -25,7 +25,7 @@ public class Author {
 
     // FetchType.EAGER: When we retrieve a Library, we'll also automatically retrieve all of its corresponding Editions
     // CascadeType.ALL: Propagates all operations from Author to Books
-    @OneToMany(mappedBy = "author", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "author", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book> books = new ArrayList<>();
 
     public Author() {}
@@ -73,6 +73,11 @@ public class Author {
     public void addBook(Book book) {
         books.add(book);
         book.setAuthor(this);
+    }
+
+    public void eliminarBook(Book book){
+        books.remove(book);
+        book.setAuthor(null);
     }
 
 }
