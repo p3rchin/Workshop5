@@ -227,7 +227,7 @@
                         cell.appendChild(text);
                     });
 
-                    if (actions.includes('create-book')) {
+                    if (actions.includes('books')) {
                         var cell = newRow.insertCell();
                         var action = document.createElement('button');
                         action.setAttribute('onclick', 'location.href="./form-book.jsp?authorId=' + d['authorId'] + '";');
@@ -257,7 +257,7 @@
     printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name']);
 
     // Printing authors
-    printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name', 'numBooks'], actions = ['create-book']);
+    printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name', 'numBooks'], actions = ['books']);
 
     // Printing authors
     printTable(elementId = 'customersTbl', servlet = 'list-customers', columns = ['email', 'firtsName', 'lastName', 'gender', 'age', 'numeroRentas'], actions = ['create-customer']);

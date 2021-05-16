@@ -12,29 +12,20 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet(name = "cretateBookServlet", value = "/create-book")
-public class CreateBookServlet extends HttpServlet {
-
+@WebServlet(name = "cretateEditionServlet", value = "/create-edition")
+public class CreateEditionServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setContentType("text/html");
-        SimpleDateFormat formatter =new SimpleDateFormat("dd/MM/yyyy");
-        String title = request.getParameter("title");
-        String isbn = request.getParameter("isbn");
-        Integer authorId = Integer.parseInt(request.getParameter("authorId"));
-        String genre = request.getParameter("genre");
-
-        String descripcion = request.getParameter("description");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String description = request.getParameter("description");
         String year = request.getParameter("date");
-        Integer bookId = Integer.parseInt(request.getParameter("bookId"));
 
-        BookService bookService = new BookService();
+        String bookId = request.getParameter("bookId");
+        System.out.println(bookId);
         EditionService editionService = new EditionService();
-        bookService.saveBook(title, isbn, authorId, genre);
-        editionService.saveEdition(descripcion, year, bookId);
+        editionService.saveEdition(description, year, Integer.parseInt(bookId));
 
         response.sendRedirect("./index.jsp");
-
     }
-
 }

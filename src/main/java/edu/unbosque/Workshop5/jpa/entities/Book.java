@@ -37,16 +37,10 @@ public class Book {
 
     public Book() {}
 
-    public Book(String title, String isbn) {
-        this.title = title;
-        this.isbn = isbn;
-    }
 
-    public Book(Integer bookId, String title, String isbn, Author author, String genre) {
-        this.bookId = bookId;
+    public Book(String title, String isbn, String genre) {
         this.title = title;
         this.isbn = isbn;
-        this.author = author;
         this.genre = genre;
     }
 
@@ -92,7 +86,7 @@ public class Book {
 
     public void addEdition(Edition edition) {
         editions.add(edition);
-        edition.setEditionId(null);
+        edition.setBook(this);
     }
 
     public void setGenre(String genre) {

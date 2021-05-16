@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface BookRepository {
 
     Optional<Book> findById(Integer id);
+    List<Book> findByIdAuthor();
 
     Optional<Book> findByTitle(String title);
 
@@ -16,5 +17,9 @@ public interface BookRepository {
     List<Book> findAll();
 
     Optional<Book> save(Book book);
+
+    void deleteByTitle(String title);
+
+    void updateByTitle(String title, String isbn_number, String genre);
 
 }

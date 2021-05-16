@@ -1,6 +1,7 @@
 package edu.unbosque.Workshop5.jpa.repositories;
 
 import edu.unbosque.Workshop5.jpa.entities.Book;
+import edu.unbosque.Workshop5.jpa.entities.Customer;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -17,6 +18,12 @@ public class BookRepositoryImpl implements BookRepository {
     public Optional<Book> findById(Integer id) {
         Book book = entityManager.find(Book.class, id);
         return book != null ? Optional.of(book) : Optional.empty();
+    }
+
+    @Override
+    public List<Book> findByIdAuthor() {
+
+        return entityManager.createQuery("from Book INNER JOIN Author ON Book.id = Author.id ").getResultList();
     }
 
     public Optional<Book> findByTitle(String title) {
@@ -47,6 +54,37 @@ public class BookRepositoryImpl implements BookRepository {
             e.printStackTrace();
         }
         return Optional.empty();
+    }
+
+    @Override
+    public void deleteByTitle(String title) {
+        Book book = entityManager.find(Book.class, title);
+        if (book != null) {
+            try {
+
+                entityManager.remove(book);
+                entityManager.getTransaction().commit();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void updateByTitle(String title, String isbn_number, String genre) {
+        Book book = entityManager.find(Book.class, title);
+        if (book != null) {
+            try {
+                entityManager.getTransaction().begin();
+                book.setIsbn(isbn_number);
+                book.setGenre(genre);
+                entityManager.merge(book);
+                entityManager.getTransaction().commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

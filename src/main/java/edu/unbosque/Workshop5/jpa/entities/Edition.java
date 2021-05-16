@@ -6,8 +6,8 @@ import java.util.*;
 @Entity
 @Table(name = "Edition") // Optional
 @NamedQueries({
-        @NamedQuery(name = "Edition.findAll",
-                query = "SELECT b FROM Edition b")
+        @NamedQuery(name = "Edition.findById",
+                query = "SELECT b FROM Edition b WHERE b.releaseYear = :releaseYear")
 })
 public class Edition {
 
@@ -20,7 +20,7 @@ public class Edition {
     private String description;
 
     @Column(name = "release_year")
-    private Date releaseYear;
+    private String releaseYear;
 
     @ManyToOne
     @JoinColumn(name = "book_id")
@@ -28,20 +28,20 @@ public class Edition {
 
     // FetchType.EAGER: When we retrieve a Library, we'll also automatically retrieve all of its corresponding Editions
     // CascadeType.PERSIST: When we save a superhero, its movies will also be saved
+    @OneToMany(mappedBy = "edition", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Rent> rents = new ArrayList<>();
+
     @ManyToMany(mappedBy = "editions", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     private Set<Library> libraries = new HashSet<>();
 
-//    @OneToMany(mappedBy = "edition", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    private List<Rent> rents = new ArrayList<>();
-
     public Edition() {}
 
-    public Edition(String description, Date releaseYear) {
+    public Edition(String description, String releaseYear) {
         this.description = description;
         this.releaseYear = releaseYear;
     }
 
-    public Edition(Integer editionId, String description, Date releaseYear) {
+    public Edition(Integer editionId, String description, String releaseYear) {
         this.editionId = editionId;
         this.description = description;
         this.releaseYear = releaseYear;
@@ -63,11 +63,11 @@ public class Edition {
         this.description = description;
     }
 
-    public Date getReleaseYear() {
+    public String getReleaseYear() {
         return releaseYear;
     }
 
-    public void setReleaseYear(Date releaseYear) {
+    public void setReleaseYear(String releaseYear) {
         this.releaseYear = releaseYear;
     }
 
@@ -87,14 +87,14 @@ public class Edition {
         libraries.add(library);
         library.getEditions().add(this);
     }
-//
-//    public List<Rent> getRents() {
-//        return rents;
-//    }
-//
-//    public void addRent(Rent rent) {
-//        rents.add(rent);
-//        rent.setRent_id(null);
-//    }
+
+    public List<Rent> getRents() {
+        return rents;
+    }
+
+    public void addRent(Rent rent) {
+        rents.add(rent);
+        rent.setRent_id(null);
+    }
 
 }
