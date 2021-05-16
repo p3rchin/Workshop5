@@ -22,6 +22,7 @@ public class EditionService {
 
     public void saveEdition(String description, String year, Integer book_id) {
 
+        System.out.println(description + year + book_id);
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 

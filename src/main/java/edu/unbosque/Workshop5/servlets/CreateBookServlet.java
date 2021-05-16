@@ -18,7 +18,6 @@ public class CreateBookServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setContentType("text/html");
-        SimpleDateFormat formatter =new SimpleDateFormat("dd/MM/yyyy");
         String title = request.getParameter("title");
         String isbn = request.getParameter("isbn");
         Integer authorId = Integer.parseInt(request.getParameter("authorId"));
@@ -32,7 +31,6 @@ public class CreateBookServlet extends HttpServlet {
         EditionService editionService = new EditionService();
         bookService.saveBook(title, isbn, authorId, genre);
         editionService.saveEdition(descripcion, year, bookId);
-
         response.sendRedirect("./index.jsp");
 
     }
