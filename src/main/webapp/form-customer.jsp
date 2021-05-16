@@ -63,9 +63,9 @@
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
                                     <li><a href="index.jsp">Inicio</a></li>
+                                    <li><a href="form-library.jsp">Librerías</a></li>
                                     <li><a href="form-author.jsp">Autores</a></li>
                                     <li  class="active"><a href="form-customer.jsp">Clientes</a></li>
-                                    <li><a href="form-library.jsp">Librerías</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -198,19 +198,19 @@
                     <form method="get" action="update-customer">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer email" type="text" id="email" name="email">
+                                <input class="contactus" placeholder="Customer email" type="text" name="email">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer name" type="text" id="firtsName" name="firtsName">
+                                <input class="contactus" placeholder="Customer name" type="text"  name="firtsName">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer lastname" type="text" id="lastName" name="lastName">
+                                <input class="contactus" placeholder="Customer lastname" type="text" name="lastName">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer gender" type="text" id="gender" name="gender">
+                                <input class="contactus" placeholder="Customer gender" type="text" name="gender">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer age" type="text" id="age" name="age">
+                                <input class="contactus" placeholder="Customer age" type="text" name="age">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Update customer">

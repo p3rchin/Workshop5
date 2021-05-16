@@ -66,9 +66,17 @@ public class AuthorRepositoryImpl implements AuthorRepository {
     @Override
     public void updateById(Integer id, String name, String country) {
         Author author = entityManager.find(Author.class, id);
-        author.setName(name);
-        author.setCountry(country);
-        entityManager.merge(author);
+        if (author != null) {
+            try {
+                entityManager.getTransaction().begin();
+                author.setName(name);
+                author.setCountry(country);
+                entityManager.merge(author);
+                entityManager.getTransaction().commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

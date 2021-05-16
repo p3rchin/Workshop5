@@ -1,5 +1,6 @@
 package edu.unbosque.Workshop5.jpa.repositories;
 
+import edu.unbosque.Workshop5.jpa.entities.Author;
 import edu.unbosque.Workshop5.jpa.entities.Customer;
 
 import javax.persistence.EntityManager;
@@ -59,4 +60,24 @@ public class CustomerRepositoryImpl implements CustomerRepository{
             }
         }
     }
+
+    @Override
+    public void updateByEmail(String email, String name, String lastname, String gender, Integer age) {
+        Customer customer = entityManager.find(Customer.class, email);
+        if (customer != null) {
+            try {
+                entityManager.getTransaction().begin();
+                customer.setFirts_name(name);
+                customer.setLast_name(lastname);
+                customer.setGender(gender);
+                customer.setAge(age);
+                entityManager.merge(customer);
+                entityManager.getTransaction().commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
 }

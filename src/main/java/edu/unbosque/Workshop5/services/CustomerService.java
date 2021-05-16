@@ -73,4 +73,14 @@ public class CustomerService {
         entityManager.close();
         entityManagerFactory.close();
     }
+
+    public void updateCustomer(String email, String name, String lastname, String gender, Integer age){
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        customerRepository = new CustomerRepositoryImpl(entityManager);
+        customerRepository.updateByEmail(email, name, lastname, gender, age);
+        entityManager.close();
+        entityManagerFactory.close();
+    }
 }

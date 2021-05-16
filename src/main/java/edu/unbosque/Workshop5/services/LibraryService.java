@@ -1,6 +1,7 @@
 package edu.unbosque.Workshop5.services;
 
 import edu.unbosque.Workshop5.jpa.entities.Library;
+import edu.unbosque.Workshop5.jpa.repositories.AuthorRepositoryImpl;
 import edu.unbosque.Workshop5.jpa.repositories.LibraryRepository;
 import edu.unbosque.Workshop5.jpa.repositories.LibraryRepositoryImpl;
 
@@ -56,6 +57,29 @@ public class LibraryService {
 
         return;
 
+    }
+
+    public void deleteLibrary(Integer libraryId) {
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        libraryRepository = new LibraryRepositoryImpl(entityManager);
+        libraryRepository.deleteById(libraryId);
+
+        entityManager.close();
+        entityManagerFactory.close();
+
+    }
+
+    public void updateLibraryById(Integer authorId, String name){
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        libraryRepository = new LibraryRepositoryImpl(entityManager);
+        libraryRepository.updateById(authorId, name);
+        entityManager.close();
+        entityManagerFactory.close();
     }
 
 }
