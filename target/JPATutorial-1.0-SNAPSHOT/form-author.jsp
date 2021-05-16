@@ -116,36 +116,96 @@
     </div>
 </div>
 <!-- end Testimonial -->
-<div>
-    <form method="get" action="delete-author">
+
+<div id="testimonial" class="testimonial">
+    <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <input class="contactus" placeholder="Author id" type="number" name="authorId">
-            </div>
-            <div class="col-sm-12">
-                <input class="send" type="submit" value="Delete author">
+            <div class="col-md-12">
             </div>
         </div>
-    </form>
-</div>
-<div>
-    <form method="get" action="update-author">
         <div class="row">
-            <div class="col-sm-12">
-                <input class="contactus" placeholder="Author id" type="number" name="authorId">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div id="testimonial_slider" class="carousel slide banner-bg" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="first-slide" src="images/deleteautor.png">
+                            <div class="container">
+                                <div class="carousel-caption relat">
+                                    <h3>Eliminación de autores para tu librería</h3>
+                                    <p>En este espacio podrás eliminar un autor de tu librería.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-12">
-                <input class="contactus" placeholder="Author name" type="text" name="name">
-            </div>
-            <div class="col-sm-12">
-                <input class="contactus" placeholder="Author country" type="text" name="country">
-            </div>
-            <div class="col-sm-12">
-                <input class="send" type="submit" value="Update author">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="contact">
+                    <h3>Eliminar a un autor</h3>
+                    <form method="get" action="delete-author">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Author id" type="number" name="authorId">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="send" type="submit" value="Delete author">
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </form>
+    </div>
 </div>
+<!-- end Testimonial -->
+
+<div id="testimonial" class="testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div id="testimonial_slider" class="carousel slide banner-bg" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="first-slide" src="images/updateautor.jpg">
+                            <div class="container">
+                                <div class="carousel-caption relat">
+                                    <h3>Modificación de autores para tu librería</h3>
+                                    <p>En este espacio podrás modificar un autor de la librería.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="contact">
+                    <h3>Modifica a un autor</h3>
+                    <form method="get" action="update-author">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Author id" type="number" name="authorId">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Author name" type="text" name="name">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Author country" type="text" name="country">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="send" type="submit" value="Update author">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <footr>
     <div class="footer">
         <div class="container">

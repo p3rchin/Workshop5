@@ -86,11 +86,11 @@
                 <div id="testimonial_slider" class="carousel slide banner-bg" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="first-slide" src="images/autor.jpg">
+                            <img class="first-slide" src="images/customer.jpg">
                             <div class="container">
                                 <div class="carousel-caption relat">
                                     <h3>Añade un cliente</h3>
-                                    <p>En este espacio podrás crear un autor de libros para tu librería.</p>
+                                    <p>En este espacio podrás crear un cliente de tu librería.</p>
                                 </div>
                             </div>
                         </div>
@@ -100,16 +100,25 @@
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
                     <h3>Agrega a un cliente</h3>
-                    <form method="get" action="create-author">
+                    <form method="get" action="create-customer">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Author name" type="text" name="name">
+                                <input class="contactus" placeholder="Customer email" type="text" id="email" name="email">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Author country" type="text" name="country">
+                                <input class="contactus" placeholder="Customer name" type="text" id="firtsName" name="firtsName">
                             </div>
                             <div class="col-sm-12">
-                                <input class="send" type="submit" value="Create author">
+                                <input class="contactus" placeholder="Customer lastname" type="text" id="lastName" name="lastName">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Customer gender" type="text" id="gender" name="gender">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Customer age" type="text" id="age" name="age">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="send" type="submit" value="Create customer">
                             </div>
                         </div>
                     </form>
@@ -120,32 +129,104 @@
 </div>
 
 
-<form method="get" action="create-customer">
-    Customer email: <input type="email" id="email" name="email">
-    <br>
-    Customer Nombre: <input type="text" id="firtsName" name="firtsName">
-    <br>
-    Customer Apellido: <input type="text" id="lastName" name="lastName">
-    <br>
-    Customer Genero: <input type="text" id="gender" name="gender">
-    <br>
-    Customer Edad: <input type="number" id="age" name="age">
-
-    <input type="submit" value="Create customer!">
-</form>
-
-<div>
-    <form method="get" action="delete-customer">
+<div id="testimonial" class="testimonial">
+    <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <input class="contactus" placeholder="Customer email" type="email" name="customerEmail">
-            </div>
-            <div class="col-sm-12">
-                <input class="send" type="submit" value="Delete customer">
+            <div class="col-md-12">
             </div>
         </div>
-    </form>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div id="testimonial_slider" class="carousel slide banner-bg" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="first-slide" src="images/deletecustomer.jpg">
+                            <div class="container">
+                                <div class="carousel-caption relat">
+                                    <h3>Eliminación de clientes para tu librería</h3>
+                                    <p>En este espacio podrás eliminar un cliente de tu librería.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="contact">
+                    <h3>Eliminar a un cliente</h3>
+                    <form method="get" action="delete-customer">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Customer email" type="email" name="customerEmail">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="send" type="submit" value="Delete customer">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div id="testimonial" class="testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div id="testimonial_slider" class="carousel slide banner-bg" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="first-slide" src="images/updatecustomer.jpg">
+                            <div class="container">
+                                <div class="carousel-caption relat">
+                                    <h3>Modificación de cleintes de tu librería</h3>
+                                    <p>En este espacio podrás modificar un cliente de la librería.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="contact">
+                    <h3>Modifica a un cliente</h3>
+                    <form method="get" action="update-customer">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Customer email" type="text" id="email" name="email">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Customer name" type="text" id="firtsName" name="firtsName">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Customer lastname" type="text" id="lastName" name="lastName">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Customer gender" type="text" id="gender" name="gender">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Customer age" type="text" id="age" name="age">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="send" type="submit" value="Update customer">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 <footr>
     <div class="footer">
         <div class="container">
