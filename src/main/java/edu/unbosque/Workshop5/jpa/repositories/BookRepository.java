@@ -20,6 +20,8 @@ public interface BookRepository {
 
     void deleteByTitle(String title);
 
+    void deleteById(Integer id);
+
     void updateByTitle(String title, String isbn_number, String genre);
 
 }

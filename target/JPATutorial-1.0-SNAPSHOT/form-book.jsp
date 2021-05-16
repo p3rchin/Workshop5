@@ -25,9 +25,7 @@
 
 <div>
     <form action="./delete-book">
-        Book title: <input type="text" id="titleD" name="title">
-        <br />
-        Book ISBN: <input type="text" id="isbnD" name="isbn">
+        Book title: <input type="text" name="bookId">
         <br />
         <input type="submit" value="Delete book!">
     </form>

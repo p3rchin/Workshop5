@@ -1,5 +1,6 @@
 package edu.unbosque.Workshop5.jpa.repositories;
 
+import edu.unbosque.Workshop5.jpa.entities.Author;
 import edu.unbosque.Workshop5.jpa.entities.Book;
 import edu.unbosque.Workshop5.jpa.entities.Customer;
 
@@ -61,6 +62,23 @@ public class BookRepositoryImpl implements BookRepository {
         Book book = entityManager.find(Book.class, title);
         if (book != null) {
             try {
+
+                entityManager.remove(book);
+                entityManager.getTransaction().commit();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        Book book = entityManager.find(Book.class, id);
+        if (book != null) {
+            try {
+
+                entityManager.getTransaction().begin();
 
                 entityManager.remove(book);
                 entityManager.getTransaction().commit();

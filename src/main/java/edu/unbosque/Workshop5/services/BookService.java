@@ -70,13 +70,13 @@ public class BookService {
 
     }
 
-    public void deleteBook(String title) {
+    public void deleteBook(Integer id) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         bookRepository = new BookRepositoryImpl(entityManager);
-        bookRepository.deleteByTitle(title);
+        bookRepository.deleteById(id);
 
         entityManager.close();
         entityManagerFactory.close();
