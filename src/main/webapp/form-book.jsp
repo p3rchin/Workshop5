@@ -63,8 +63,7 @@
                         <form method="get" action="./create-book">
                             <div class="row">
 
-                                <input type="hidden" id="authorId" name="authorId"
-                                       value="<%= request.getParameter("authorId") %>">
+                                <input type="hidden" id="authorId" name="authorId" value="<%= request.getParameter("authorId") %>">
 
                                 <div class="col-sm-12">
                                     <input class="contactus" placeholder="Book title" type="text" id="title"

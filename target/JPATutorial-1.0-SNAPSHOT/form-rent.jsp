@@ -64,8 +64,13 @@
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
                     <h3>Realiza una renta</h3>
-                    <form method="get" action="index.jsp">
+                    <form method="get" action="create-rent">
                         <div class="row">
+                            <input type="hidden" id="email" name="email" value="<%= request.getParameter("email") %>">
+
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Edition Id" type="number" id="editionId" name="editionId">
+                            </div>
                             <div class="col-sm-12">
                                 <input class="contactus" placeholder="Rent date" type="date" id="date" name="date">
                             </div>

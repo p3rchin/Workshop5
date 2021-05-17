@@ -21,7 +21,6 @@ public class CreateEditionServlet extends HttpServlet {
         
         String description = request.getParameter("description");
         String year = request.getParameter("date");
-        System.out.println(year);
         String bookId = request.getParameter("bookId");
         EditionService editionService = new EditionService();
         editionService.saveEdition(description, year, Integer.parseInt(bookId));

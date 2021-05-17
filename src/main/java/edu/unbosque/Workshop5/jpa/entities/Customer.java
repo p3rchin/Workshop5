@@ -12,7 +12,7 @@ import java.util.List;
 })
 public class Customer {
     @Id
-    @Column(name = "email")
+    @Column(name = "email_id")
     private String email;
     @Column(name = "firts_name")
     private String firts_name;
@@ -83,6 +83,6 @@ public class Customer {
 
     public void addRent(Rent rent) {
         rents.add(rent);
-        rent.setRent_id(null);
+        rent.setCustomer(null);
     }
 }

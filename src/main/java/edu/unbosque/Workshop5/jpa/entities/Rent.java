@@ -21,16 +21,20 @@ public class Rent {
     @JoinColumn(name = "edition_id")
     private Edition edition;
     @Column(name = "renting_date")
-    private Date renting_date;
+    private String renting_date;
 
     public Rent(){
 
     }
 
-    public Rent(Integer rent_id, Customer customer, Edition edition, Date renting_date) {
+    public Rent(Integer rent_id, Customer customer, Edition edition, String renting_date) {
         this.rent_id = rent_id;
         this.customer = customer;
         this.edition = edition;
+        this.renting_date = renting_date;
+    }
+
+    public Rent(String renting_date) {
         this.renting_date = renting_date;
     }
 
@@ -58,11 +62,11 @@ public class Rent {
         this.edition = edition;
     }
 
-    public Date getRenting_date() {
+    public String getRenting_date() {
         return renting_date;
     }
 
-    public void setRenting_date(Date renting_date) {
+    public void setRenting_date(String renting_date) {
         this.renting_date = renting_date;
     }
 }
