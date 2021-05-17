@@ -63,7 +63,8 @@
                         <form method="get" action="./create-book">
                             <div class="row">
 
-                                <input type="hidden" id="authorId" name="authorId" value="<%= request.getParameter("authorId") %>">
+                                <input type="hidden" id="authorId" name="authorId"
+                                       value="<%= request.getParameter("authorId") %>">
 
                                 <div class="col-sm-12">
                                     <input class="contactus" placeholder="Book title" type="text" id="title"
@@ -193,15 +194,15 @@
         </div>
     </div>
     <div>
-<%--        <form method="get" action="./list-books">--%>
-<%--            <div class="row">--%>
-<%--                <input type="hidden" id="" name="authorId" value="<%= request.getParameter("authorId") %>">--%>
+        <%--        <form method="get" action="./list-books">--%>
+        <%--            <div class="row">--%>
+        <%--                <input type="hidden" id="" name="authorId" value="<%= request.getParameter("authorId") %>">--%>
 
-<%--                <div class="col-sm-12">--%>
-<%--                    <input class="send" type="submit" value="View book info" onclick="printTable(elementId = 'bookTbl', servlet = 'list-books', columns = ['book_id', 'title', 'ibsn_number', 'genre', 'numeroEdiciones'], actions = ['create-edition','delete-book'])">--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </form>--%>
+        <%--                <div class="col-sm-12">--%>
+        <%--                    <input class="send" type="submit" value="View book info" onclick="printTable(elementId = 'bookTbl', servlet = 'list-books', columns = ['book_id', 'title', 'ibsn_number', 'genre', 'numeroEdiciones'], actions = ['create-edition','delete-book'])">--%>
+        <%--                </div>--%>
+        <%--            </div>--%>
+        <%--        </form>--%>
         <div id="about" class="about top_layer">
             <div class="container">
                 <div class="row">
@@ -276,7 +277,8 @@
                 xhr.send(null);
 
             }
-            printTable(elementId = 'bookTbl', servlet = 'list-books', columns = ['book_id', 'title', 'ibsn_number', 'genre', 'numeroEdiciones'], actions = ['create-edition','delete-book'])
+
+            printTable(elementId = 'bookTbl', servlet = 'list-books', columns = ['book_id', 'title', 'ibsn_number', 'genre', 'numeroEdiciones'], actions = ['create-edition', 'delete-book'])
         </script>
 
         <footr>
