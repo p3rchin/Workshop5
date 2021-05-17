@@ -83,6 +83,6 @@ public class Customer {
 
     public void addRent(Rent rent) {
         rents.add(rent);
-        rent.setCustomer(null);
+        rent.setCustomer(this);
     }
 }

@@ -94,7 +94,7 @@ public class Edition {
 
     public void addRent(Rent rent) {
         rents.add(rent);
-        rent.setEdition(null);
+        rent.setEdition(this);
     }
 
 }
