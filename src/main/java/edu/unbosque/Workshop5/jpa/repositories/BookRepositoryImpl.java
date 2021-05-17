@@ -78,7 +78,7 @@ public class BookRepositoryImpl implements BookRepository {
         if (book != null) {
             try {
                 Author author = book.getAuthor();
-                author.eliminarBook(book);
+                author.deleteBook(book);
                 entityManager.getTransaction().begin();
                 entityManager.getTransaction().commit();
 

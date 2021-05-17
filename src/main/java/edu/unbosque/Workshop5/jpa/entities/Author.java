@@ -75,7 +75,7 @@ public class Author {
         book.setAuthor(this);
     }
 
-    public void eliminarBook(Book book){
+    public void deleteBook(Book book){
         books.remove(book);
         book.setAuthor(null);
     }

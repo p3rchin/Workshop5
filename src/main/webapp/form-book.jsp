@@ -62,10 +62,9 @@
                         <h3>Agrega un libro</h3>
                         <form method="get" action="./create-book">
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <input type="hidden" id="authorId" name="authorId"
-                                           value="<%= request.getParameter("authorId") %>">
-                                </div>
+
+                                <input type="hidden" id="authorId" name="authorId" value="<%= request.getParameter("authorId") %>">
+
                                 <div class="col-sm-12">
                                     <input class="contactus" placeholder="Book title" type="text" id="title"
                                            name="title">
@@ -127,7 +126,7 @@
                         <form method="get" action="./delete-book">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <input class="contactus" placeholder="Book id" type="text" name="bookId">
+                                    <input class="contactus" placeholder="Book id" type="text" name="book_id">
                                 </div>
                                 <div class="col-sm-12">
                                     <input class="send" type="submit" value="Delete book">
@@ -194,7 +193,15 @@
         </div>
     </div>
     <div>
+<%--        <form method="get" action="./list-books">--%>
+<%--            <div class="row">--%>
+<%--                <input type="hidden" id="" name="authorId" value="<%= request.getParameter("authorId") %>">--%>
 
+<%--                <div class="col-sm-12">--%>
+<%--                    <input class="send" type="submit" value="View book info" onclick="printTable(elementId = 'bookTbl', servlet = 'list-books', columns = ['book_id', 'title', 'ibsn_number', 'genre', 'numeroEdiciones'], actions = ['create-edition','delete-book'])">--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </form>--%>
         <div id="about" class="about top_layer">
             <div class="container">
                 <div class="row">
@@ -209,7 +216,8 @@
                                     <th>ibsn_number</th>
                                     <th>Genre</th>
                                     <th>#Editions</th>
-                                    <th>Actions</th>
+                                    <th>Editions</th>
+                                    <th>Delete book</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -250,6 +258,15 @@
                                 action.appendChild(text);
                                 cell.appendChild(action);
                             }
+                            if (actions.includes('delete-book')) {
+                                var cell = newRow.insertCell();
+                                var action = document.createElement('button');
+                                action.setAttribute('onclick', 'location.href="./delete-book?book_id=' + d['book_id'] + '";');
+                                var text = document.createTextNode('Delete book');
+                                action.appendChild(text);
+                                cell.appendChild(action);
+
+                            }
 
                         });
 
@@ -259,8 +276,7 @@
                 xhr.send(null);
 
             }
-
-            printTable(elementId = 'bookTbl', servlet = 'list-books', columns = ['book_id', 'title', 'ibsn_number', 'genre', 'numeroEdiciones'], actions = ['create-edition']);
+            printTable(elementId = 'bookTbl', servlet = 'list-books', columns = ['book_id', 'title', 'ibsn_number', 'genre', 'numeroEdiciones'], actions = ['create-edition','delete-book'])
         </script>
 
         <footr>

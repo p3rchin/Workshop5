@@ -4,6 +4,8 @@ import javax.persistence.criteria.CriteriaBuilder;
 
 public class BookPOJO {
 
+    private Integer authorId;
+
     private Integer book_id;
 
     private String title;
@@ -14,7 +16,6 @@ public class BookPOJO {
 
     private Integer numeroEdiciones;
 
-//    private Integer authorId;
 
     public BookPOJO(){
 
@@ -26,7 +27,7 @@ public class BookPOJO {
         this.ibsn_number = ibsn_number;
         this.genre = genre;
         this.numeroEdiciones = numeroEdiciones;
-//        this.authorId = authorId;
+
     }
 
     public Integer getBook_id() {
@@ -69,11 +70,11 @@ public class BookPOJO {
         this.numeroEdiciones = numeroEdiciones;
     }
 
-//    public Integer getAuthorId() {
-//        return authorId;
-//    }
-//
-//    public void setAuthorId(Integer authorId) {
-//        this.authorId = authorId;
-//    }
+    public Integer getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Integer authorId) {
+        this.authorId = authorId;
+    }
 }

@@ -164,8 +164,9 @@
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
+                            <th>Country</th>
                             <th># Books</th>
-                            <th>Actions</th>
+                            <th>Books</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -188,12 +189,12 @@
                         <thead>
                         <tr>
                             <th>Email</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Genero</th>
-                            <th>Edad</th>
-                            <th># Rentas</th>
-                            <th>Actions</th>
+                            <th>Name</th>
+                            <th>Lastname</th>
+                            <th>Gender</th>
+                            <th>Age</th>
+                            <th># Rents</th>
+                            <th>Rents</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -231,7 +232,7 @@
                         var cell = newRow.insertCell();
                         var action = document.createElement('button');
                         action.setAttribute('onclick', 'location.href="./form-book.jsp?authorId=' + d['authorId'] + '";');
-                        var text = document.createTextNode('Create book');
+                        var text = document.createTextNode('Books');
                         action.appendChild(text);
                         cell.appendChild(action);
                     }
@@ -239,7 +240,7 @@
                         var cell = newRow.insertCell();
                         var action = document.createElement('button');
                         action.setAttribute('onclick', 'location.href="./form-rent.jsp?email=' + d['email'] + '";');
-                        var text = document.createTextNode('Create rent');
+                        var text = document.createTextNode('Rents');
                         action.appendChild(text);
                         cell.appendChild(action);
                     }
@@ -257,7 +258,7 @@
     printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name']);
 
     // Printing authors
-    printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name', 'numBooks'], actions = ['books']);
+    printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name','country', 'numBooks'], actions = ['books']);
 
     // Printing authors
     printTable(elementId = 'customersTbl', servlet = 'list-customers', columns = ['email', 'firtsName', 'lastName', 'gender', 'age', 'numeroRentas'], actions = ['create-customer']);

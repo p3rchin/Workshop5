@@ -32,7 +32,7 @@ public class Book {
     @Column(name = "genre")
     private String genre;
 
-    @OneToMany(mappedBy = "book", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "book", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Edition> editions = new ArrayList<>();
 
     public Book() {}
@@ -87,6 +87,11 @@ public class Book {
     public void addEdition(Edition edition) {
         editions.add(edition);
         edition.setBook(this);
+    }
+
+    public void deleteEdition(Edition edition){
+        editions.remove(edition);
+        edition.setBook(null);
     }
 
     public void setGenre(String genre) {

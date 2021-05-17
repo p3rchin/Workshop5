@@ -1,7 +1,9 @@
 package edu.unbosque.Workshop5.servlets;
 
+import edu.unbosque.Workshop5.jpa.entities.Book;
 import edu.unbosque.Workshop5.services.BookService;
 import edu.unbosque.Workshop5.services.EditionService;
+import edu.unbosque.Workshop5.servlets.pojos.BookPOJO;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +13,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @WebServlet(name = "cretateBookServlet", value = "/create-book")
 public class CreateBookServlet extends HttpServlet {
@@ -25,11 +28,14 @@ public class CreateBookServlet extends HttpServlet {
 
         String descripcion = request.getParameter("description");
         String year = request.getParameter("date");
-        Integer bookId = Integer.parseInt(request.getParameter("bookId"));
-
         BookService bookService = new BookService();
         EditionService editionService = new EditionService();
         bookService.saveBook(title, isbn, authorId, genre);
+
+        List<BookPOJO> books =  bookService.listBooks();
+        BookPOJO book =  books.get(books.size() -1 );
+        Integer bookId = book.getBook_id();
+
         editionService.saveEdition(descripcion, year, bookId);
         response.sendRedirect("./index.jsp");
 
