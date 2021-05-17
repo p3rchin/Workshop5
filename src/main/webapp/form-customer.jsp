@@ -17,7 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Pet Citizens</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -62,10 +61,10 @@
                         <div class="limit-box">
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
-                                    <li><a href="index.jsp">Inicio</a></li>
-                                    <li><a href="form-library.jsp">Librerías</a></li>
-                                    <li><a href="form-author.jsp">Autores</a></li>
-                                    <li  class="active"><a href="form-customer.jsp">Clientes</a></li>
+                                    <li><a href="index.jsp">Home</a></li>
+                                    <li><a href="form-library.jsp">Libreries</a></li>
+                                    <li><a href="form-author.jsp">Authors</a></li>
+                                    <li  class="active"><a href="form-customer.jsp">Customers</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -89,8 +88,8 @@
                             <img class="first-slide" src="images/customer.jpg">
                             <div class="container">
                                 <div class="carousel-caption relat">
-                                    <h3>Añade un cliente</h3>
-                                    <p>En este espacio podrás crear un cliente de tu librería.</p>
+                                    <h3>Add a customer</h3>
+                                    <p>In this space you can create a client of your bookstore.</p>
                                 </div>
                             </div>
                         </div>
@@ -99,23 +98,30 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Agrega a un cliente</h3>
+                    <h3>Add a customer</h3>
                     <form method="get" action="create-customer">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer email" type="text" id="email" name="email">
+                                <input class="contactus" placeholder="Customer email" type="text" id="email" name="email" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer name" type="text" id="firtsName" name="firtsName">
+                                <input class="contactus" placeholder="Customer name" type="text" id="firtsName" name="firtsName" required=""
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer lastname" type="text" id="lastName" name="lastName">
+                                <input class="contactus" placeholder="Customer lastname" type="text" id="lastName" name="lastName" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer gender" type="text" id="gender" name="gender">
+                                <p>Please select your gender:</p>
+                                <input type="radio" id="M" name="gender" value="M" required="required">
+                                <label for="male">Male</label><br>
+                                <input type="radio" id="F" name="gender" value="F" required="required">
+                                <label for="female">Female</label><br>
+                                <input type="radio" id="O" name="gender" value="O" required="required">
+                                <label for="other">Other</label>
+
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer age" type="text" id="age" name="age">
+                                <input class="contactus" placeholder="Customer age" type="text" id="age" name="age" required="">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Create customer">
@@ -143,8 +149,8 @@
                             <img class="first-slide" src="images/deletecustomer.jpg">
                             <div class="container">
                                 <div class="carousel-caption relat">
-                                    <h3>Eliminación de clientes para tu librería</h3>
-                                    <p>En este espacio podrás eliminar un cliente de tu librería.</p>
+                                    <h3>Elimination of clients for your bookstore</h3>
+                                    <p>In this space you can delete a client from your bookstore.</p>
                                 </div>
                             </div>
                         </div>
@@ -153,11 +159,11 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Eliminar a un cliente</h3>
+                    <h3>Delete a customer</h3>
                     <form method="get" action="delete-customer">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer email" type="email" name="customerEmail">
+                                <input class="contactus" placeholder="Customer email" type="email" name="customerEmail" required="">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Delete customer">
@@ -184,8 +190,8 @@
                             <img class="first-slide" src="images/updatecustomer.jpg">
                             <div class="container">
                                 <div class="carousel-caption relat">
-                                    <h3>Modificación de cleintes de tu librería</h3>
-                                    <p>En este espacio podrás modificar un cliente de la librería.</p>
+                                    <h3>Modification of customers of your bookstore</h3>
+                                    <p>In this space you can modify a customer of the bookstore.</p>
                                 </div>
                             </div>
                         </div>
@@ -194,23 +200,29 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Modifica a un cliente</h3>
+                    <h3>Modify a customer</h3>
                     <form method="get" action="update-customer">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer email" type="text" name="email">
+                                <input class="contactus" placeholder="Customer email" type="text" name="email" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer name" type="text"  name="firtsName">
+                                <input class="contactus" placeholder="Customer name" type="text"  name="firtsName" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer lastname" type="text" name="lastName">
+                                <input class="contactus" placeholder="Customer lastname" type="text" name="lastName" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer gender" type="text" name="gender">
+                                <p>Please select your gender:</p>
+                                <input type="radio" id="M" name="gender" value="M" required="required">
+                                <label for="male">Male</label><br>
+                                <input type="radio" id="F" name="gender" value="F" required="required">
+                                <label for="female">Female</label><br>
+                                <input type="radio" id="O" name="gender" value="O" required="required">
+                                <label for="other">Other</label>
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer age" type="text" name="age">
+                                <input class="contactus" placeholder="Customer age" type="text" name="age" required="">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Update customer">
@@ -222,11 +234,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 <footr>
     <div class="footer">
         <div class="container">
@@ -235,7 +242,6 @@
         </div>
     </div>
 </footr>
-
 <!-- Javascript files-->
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/popper.min.js"></script>

@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Pet Citizens</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -55,10 +54,10 @@
                         <div class="limit-box">
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
-                                    <li><a href="index.jsp">Inicio</a></li>
-                                    <li class="active"><a href="form-library.jsp">Librerías</a></li>
-                                    <li><a href="form-author.jsp">Autores</a></li>
-                                    <li><a href="form-customer.jsp">Clientes</a></li>
+                                    <li><a href="index.jsp">Home</a></li>
+                                    <li class="active"><a href="form-library.jsp">Libreries</a></li>
+                                    <li><a href="form-author.jsp">Authors</a></li>
+                                    <li><a href="form-customer.jsp">Customers</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -82,8 +81,8 @@
                             <img class="first-slide" src="images/library.jpg">
                             <div class="container">
                                 <div class="carousel-caption relat">
-                                    <h3>Añade una librería</h3>
-                                    <p>En este espacio podrás crear una librería</p>
+                                    <h3>Add a library</h3>
+                                    <p>In this space you can create a library</p>
                                 </div>
                             </div>
                         </div>
@@ -92,11 +91,11 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Agrega una librería</h3>
+                    <h3>Add a library</h3>
                     <form method="get" action="./create-library">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Library name" type="text" name="name">
+                                <input class="contactus" placeholder="Library name" type="text" name="name" required="">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Create library">
@@ -123,8 +122,8 @@
                             <img class="first-slide" src="images/deletelibrary.jpg">
                             <div class="container">
                                 <div class="carousel-caption relat">
-                                    <h3>Eliminación de librería</h3>
-                                    <p>En este espacio podrás eliminar una slibrería.</p>
+                                    <h3>Library removal</h3>
+                                    <p>In this space you can delete a library.</p>
                                 </div>
                             </div>
                         </div>
@@ -133,11 +132,11 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Eliminar una librería</h3>
+                    <h3>Delete a library</h3>
                     <form method="get" action="delete-library">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Library id" type="number" name="libraryId">
+                                <input class="contactus" placeholder="Library ID" type="number" name="libraryId" required="">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Delete library">
@@ -164,8 +163,8 @@
                             <img class="first-slide" src="images/updatelibrary.jpg">
                             <div class="container">
                                 <div class="carousel-caption relat">
-                                    <h3>Modificación de librerías</h3>
-                                    <p>En este espacio podrás modificar una librería</p>
+                                    <h3>Library modification</h3>
+                                    <p>In this space you can modify a library</p>
                                 </div>
                             </div>
                         </div>
@@ -174,14 +173,14 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Modifica a una librería</h3>
+                    <h3>Modify a library</h3>
                     <form method="get" action="update-library">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Library id" type="number" name="libraryId">
+                                <input class="contactus" placeholder="Library id" type="number" name="libraryId" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Library name" type="text" name="name">
+                                <input class="contactus" placeholder="Library name" type="text" name="name" required="">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Update library">

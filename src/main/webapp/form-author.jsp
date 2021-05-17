@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Pet Citizens</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -56,10 +55,10 @@
                         <div class="limit-box">
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
-                                    <li><a href="index.jsp">Inicio</a></li>
-                                    <li><a href="form-library.jsp">Librerías</a></li>
-                                    <li class="active"><a href="form-author.jsp">Autores</a></li>
-                                    <li><a href="form-customer.jsp">Clientes</a></li>
+                                    <li><a href="index.jsp">Home</a></li>
+                                    <li><a href="form-library.jsp">Libreries</a></li>
+                                    <li class="active"><a href="form-author.jsp">Authors</a></li>
+                                    <li><a href="form-customer.jsp">Customers</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -86,8 +85,8 @@
                             <img class="first-slide" src="images/autor.jpg">
                             <div class="container">
                                 <div class="carousel-caption relat">
-                                    <h3>Creación de autores para tu librería</h3>
-                                    <p>En este espacio podrás crear un autor de libros para tu librería.</p>
+                                    <h3>Author creation for your library</h3>
+                                    <p>In this space you can create a book author for your bookstore.</p>
                                 </div>
                             </div>
                         </div>
@@ -96,14 +95,14 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Agrega a un autor</h3>
+                    <h3>Add an author</h3>
                     <form method="get" action="create-author">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Author name" type="text" name="name">
+                                <input class="contactus" placeholder="Author name" type="text" name="name" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Author country" type="text" name="country">
+                                <input class="contactus" placeholder="Author country" type="text" name="country" required="">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Create author">
@@ -131,8 +130,8 @@
                             <img class="first-slide" src="images/deleteautor.png">
                             <div class="container">
                                 <div class="carousel-caption relat">
-                                    <h3>Eliminación de autores para tu librería</h3>
-                                    <p>En este espacio podrás eliminar un autor de tu librería.</p>
+                                    <h3>Author removal for your library</h3>
+                                    <p>In this space you can delete an author from your library.</p>
                                 </div>
                             </div>
                         </div>
@@ -141,11 +140,11 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Eliminar a un autor</h3>
+                    <h3>Delete an author</h3>
                     <form method="get" action="delete-author">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Author id" type="number" name="authorId">
+                                <input class="contactus" placeholder="Author ID" type="number" name="authorId" required="">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Delete author">
@@ -173,8 +172,8 @@
                             <img class="first-slide" src="images/updateautor.jpg">
                             <div class="container">
                                 <div class="carousel-caption relat">
-                                    <h3>Modificación de autores para tu librería</h3>
-                                    <p>En este espacio podrás modificar un autor de la librería.</p>
+                                    <h3>Author modification for your library</h3>
+                                    <p>In this space you can modify an author from the library.</p>
                                 </div>
                             </div>
                         </div>
@@ -183,17 +182,17 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Modifica a un autor</h3>
+                    <h3>Edit an author</h3>
                     <form method="get" action="update-author">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Author id" type="number" name="authorId">
+                                <input class="contactus" placeholder="Author ID" type="number" name="authorId" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Author name" type="text" name="name">
+                                <input class="contactus" placeholder="Author name" type="text" name="name" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Author country" type="text" name="country">
+                                <input class="contactus" placeholder="Author country" type="text" name="country" required="">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Update author">

@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Pet Citizens</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -39,7 +38,38 @@
     <div class="loader"><img type="image" src="images/loading.gif" alt="#"/></div>
 </div>
 
-<div id="testimonial" class="testimonial">
+
+<header>
+    <!-- header inner -->
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo"><a href="index.jsp">Library Manager</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <div class="menu-area">
+                        <div class="limit-box">
+                            <nav class="main-menu">
+                                <ul class="menu-area-main">
+                                    <li class="active"><a href="index.jsp">Home</a></li>
+                                    <li><a href="#rent">Rent</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end header inner -->
+</header>
+
+
+<div id="rent" class="testimonial">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -53,8 +83,8 @@
                             <img class="first-slide" src="images/library.jpg">
                             <div class="container">
                                 <div class="carousel-caption relat">
-                                    <h3>Renta un libro</h3>
-                                    <p>En este espacio podrás rentar un libro</p>
+                                    <h3>Rent a book</h3>
+                                    <p>In this space you can rent a book.</p>
                                 </div>
                             </div>
                         </div>
@@ -69,13 +99,13 @@
                             <input type="hidden" id="email" name="email" value="<%= request.getParameter("email") %>">
 
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Edition Id" type="number" id="editionId" name="editionId">
+                                <input class="contactus" placeholder="Edition ID" type="number" id="editionId" name="editionId" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Rent date" type="date" id="date" name="date">
+                                <input class="contactus" placeholder="Rent date" type="date" id="date" name="date" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="send" type="submit" value="Realizar renta">
+                                <input class="send" type="submit" value="Make rent">
                             </div>
                         </div>
                     </form>

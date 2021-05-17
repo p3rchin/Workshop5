@@ -10,7 +10,6 @@
             border: 1px solid black;
         }
     </style>
-
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Pet Citizens</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -64,10 +62,10 @@
                         <div class="limit-box">
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
-                                    <li class="active"><a href="index.jsp">Inicio</a></li>
-                                    <li><a href="form-library.jsp">Librerías</a></li>
-                                    <li><a href="form-author.jsp">Autores</a></li>
-                                    <li><a href="form-customer.jsp">Clientes</a></li>
+                                    <li class="active"><a href="index.jsp">Home</a></li>
+                                    <li><a href="form-library.jsp">Libreries</a></li>
+                                    <li><a href="form-author.jsp">Authors</a></li>
+                                    <li><a href="form-customer.jsp">Customers</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -86,9 +84,9 @@
                 <img class="first-slide" type="image" src="images/banner2.jpg" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption relative">
-                        <h1>La administración de una biblioteca a tus manos</h1>
-                        <p>Este portal te servirá para la gestión de una librería, con diferentes opciones que
-                            encontrarás a continuación en las siguientes páginas.</p>
+                        <h1>The administration of a library at your hands</h1>
+                        <p>This portal will help you to manage a library, with different options that
+                            you will find below on the following pages.</p>
                     </div>
                 </div>
             </div>
@@ -96,12 +94,13 @@
                 <img class="second-slide" type="image" src="images/banner3.jpg" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption relative">
-                        <h1> Opciones: <br></h1>
-                        <p align="left"> 1. Crear / modificar / eliminar un autor.<br>
-                            2. Crear / modificar / eliminar un libro asociado a un autor. Durante la creación, se debe
-                            también crear una primera edición para el libro.<br>
-                            3. Crear / modificar / eliminar una edición asociada a un libro.<br>
-                            4. Crear / modificar / eliminar una librería.<br>
+                        <h1> Options: <br></h1>
+                        <p align="left">
+                            1. Create / modify / delete an author.<br>
+                            2. Create / modify / delete a book associated with an author. During creation, you must
+                            also create a first edition for the book.<br>
+                            3. Create / modify / delete an edition associated with a book.<br>
+                            4. Create / modify / delete a library.<br>
                         </p>
                     </div>
                 </div>
@@ -110,11 +109,11 @@
                 <img class="third-slide" type="image" src="images/banner4.jpg" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption relative">
-                        <h1>Opciones:<br></h1>
-                        <p align="left"> 5. Asociar / desasociar una edición de un libro a una librería.<br>
-                            6. Crear / modificar / eliminar un cliente.<br>
-                            7. Rentar una edició de un libro.<br>
-                            8. Listar todos los libros rentados por un usuario en un rango de fechas.<br>
+                        <h1>Options:<br></h1>
+                        <p align="left"> 5. Associate / disassociate a book edition with a bookstore.<br>
+                            6. Create / modify / delete a customer.<br>
+                            7. Rent an edition of a book.<br>
+                            8. List all the books rented by a user in a range of dates.<br>
                         </p>
                     </div>
                 </div>
@@ -128,6 +127,8 @@
         </a>
     </div>
 </section>
+
+
 <div id="about" class="about top_layer">
     <div class="container">
         <div class="row">
@@ -138,7 +139,7 @@
                     <table id="librariesTbl" class="table table-dark table-striped table-bordered">
                         <thead>
                         <tr>
-                            <th>Id</th>
+                            <th>ID</th>
                             <th>Name</th>
                         </tr>
                         </thead>
@@ -162,10 +163,10 @@
                     <table id="authorsTbl" class="table table-dark table-striped table-bordered">
                         <thead>
                         <tr>
-                            <th>Id</th>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Country</th>
-                            <th># Books</th>
+                            <th>Number of books</th>
                             <th>Books</th>
                         </tr>
                         </thead>
@@ -177,6 +178,7 @@
         </div>
     </div>
 </div>
+
 
 <div id="about" class="about top_layer">
     <div class="container">
@@ -193,7 +195,7 @@
                             <th>Lastname</th>
                             <th>Gender</th>
                             <th>Age</th>
-                            <th># Rents</th>
+                            <th>Number of rents</th>
                             <th>Rents</th>
                         </tr>
                         </thead>
@@ -301,7 +303,5 @@
     });
 
 </script>
-
-
 </body>
 </html>

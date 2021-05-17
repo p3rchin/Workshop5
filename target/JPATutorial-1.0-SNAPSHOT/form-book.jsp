@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Pet Citizens</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -35,7 +34,39 @@
 <body>
 <div>
 
-    <div id="testimonial" class="testimonial">
+    <header>
+        <!-- header inner -->
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                        <div class="full">
+                            <div class="center-desk">
+                                <div class="logo"><a href="index.jsp">Library Manager</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                        <div class="menu-area">
+                            <div class="limit-box">
+                                <nav class="main-menu">
+                                    <ul class="menu-area-main">
+                                        <li class="active"><a href="index.jsp">Home</a></li>
+                                        <li><a href="#addbook">Add book</a></li>
+                                        <li><a href="#deletebook">Delete book</a></li>
+                                        <li><a href="#updatebook">Update book</a></li>
+                                        <li><a href="#info">Info</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end header inner -->
+    </header>
+
+    <div id="addbook" class="testimonial">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -46,11 +77,11 @@
                     <div id="testimonial_slider" class="carousel slide banner-bg" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="first-slide" src="images/autor.jpg">
+                                <img class="first-slide" src="images/books.jpg">
                                 <div class="container">
                                     <div class="carousel-caption relat">
-                                        <h3>Añade libros a tu librería</h3>
-                                        <p>En este espacio podrás agregar libros para tu librería.</p>
+                                        <h3>Add books to your library</h3>
+                                        <p>In this space you can add books for your library.</p>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +90,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="contact">
-                        <h3>Agrega un libro</h3>
+                        <h3>Add a book</h3>
                         <form method="get" action="./create-book">
                             <div class="row">
 
@@ -67,21 +98,21 @@
 
                                 <div class="col-sm-12">
                                     <input class="contactus" placeholder="Book title" type="text" id="title"
-                                           name="title">
+                                           name="title" required="">
                                 </div>
                                 <div class="col-sm-12">
-                                    <input class="contactus" placeholder="Book ISBN" type="text" id="isbn" name="isbn">
+                                    <input class="contactus" placeholder="Book ISBN" type="text" id="isbn" name="isbn" required="">
                                 </div>
                                 <div class="col-sm-12">
                                     <input class="contactus" placeholder="Book genre" type="text" id="genre"
-                                           name="genre">
+                                           name="genre" required="">
                                 </div>
                                 <div class="col-sm-12">
                                     <input class="contactus" placeholder="Book description" type="text" id="description"
-                                           name="description">
+                                           name="description" required="">
                                 </div>
                                 <div class="col-sm-12">
-                                    <input class="contactus" placeholder="Book date" type="date" id="date" name="date">
+                                    <input class="contactus" placeholder="Book date" type="date" id="date" name="date" required="">
                                 </div>
                                 <div class="col-sm-12">
                                     <input type="hidden" id="bookId" name="bookId" value="14">
@@ -98,7 +129,7 @@
     </div>
     <!-- end Testimonial -->
 
-    <div id="testimonial" class="testimonial">
+    <div id="deletebook" class="testimonial">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -109,11 +140,11 @@
                     <div id="testimonial_slider" class="carousel slide banner-bg" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="first-slide" src="images/deleteautor.png">
+                                <img class="first-slide" src="images/deletebook.jpg">
                                 <div class="container">
                                     <div class="carousel-caption relat">
-                                        <h3>Eliminación de libros de tu librería</h3>
-                                        <p>En este espacio podrás eliminar un libro de tu librería.</p>
+                                        <h3>Removing books from your bookstore</h3>
+                                        <p>In this space you can delete a book from your library.</p>
                                     </div>
                                 </div>
                             </div>
@@ -122,11 +153,11 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="contact">
-                        <h3>Eliminar un libro</h3>
+                        <h3>Delete a book</h3>
                         <form method="get" action="./delete-book">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <input class="contactus" placeholder="Book id" type="text" name="book_id">
+                                    <input class="contactus" placeholder="Book ID" type="text" name="book_id" required="">
                                 </div>
                                 <div class="col-sm-12">
                                     <input class="send" type="submit" value="Delete book">
@@ -140,7 +171,7 @@
     </div>
     <!-- end Testimonial -->
 
-    <div id="testimonial" class="testimonial">
+    <div id="updatebook" class="testimonial">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -151,11 +182,11 @@
                     <div id="testimonial_slider" class="carousel slide banner-bg" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="first-slide" src="images/updateautor.jpg">
+                                <img class="first-slide" src="images/updatebook.jpg">
                                 <div class="container">
                                     <div class="carousel-caption relat">
-                                        <h3>Modificación de libros para tu librería</h3>
-                                        <p>En este espacio podrás modificar un libro de la librería.</p>
+                                        <h3>Modification of books for your bookstore</h3>
+                                        <p>In this space you can modify a book from the bookstore.</p>
                                     </div>
                                 </div>
                             </div>
@@ -164,20 +195,20 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="contact">
-                        <h3>Modifica un libro</h3>
+                        <h3>Modify a book</h3>
                         <form method="get" action="./update-book">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <input class="contactus" placeholder="Book id" type="number" name="bookId">
+                                    <input class="contactus" placeholder="Book ID" type="number" name="bookId" required="">
                                 </div>
                                 <div class="col-sm-12">
-                                    <input class="contactus" placeholder="Book title" type="text" name="title">
+                                    <input class="contactus" placeholder="Book title" type="text" name="title" required="">
                                 </div>
                                 <div class="col-sm-12">
-                                    <input class="contactus" placeholder="Book ISBN" type="text" name="isbn">
+                                    <input class="contactus" placeholder="Book ISBN" type="text" name="isbn" required="">
                                 </div>
                                 <div class="col-sm-12">
-                                    <input class="contactus" placeholder="Book genre" type="text" name="genre">
+                                    <input class="contactus" placeholder="Book genre" type="text" name="genre" required="">
                                 </div>
                                 <div class="col-sm-12">
                                     <input type="hidden" name="bookId" value="0">
@@ -202,20 +233,20 @@
         <%--                </div>--%>
         <%--            </div>--%>
         <%--        </form>--%>
-        <div id="about" class="about top_layer">
+        <div id="info" class="about top_layer">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="titlepage">
-                            <h2>Lista de libros</h2>
+                            <h2>List of books</h2>
                             <table id="bookTbl" class="table table-dark table-striped table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>BookId</th>
+                                    <th>Book ID</th>
                                     <th>Title</th>
-                                    <th>ibsn_number</th>
+                                    <th>ISBN number</th>
                                     <th>Genre</th>
-                                    <th>#Editions</th>
+                                    <th>Number of edition</th>
                                     <th>Editions</th>
                                     <th>Delete book</th>
                                 </tr>
