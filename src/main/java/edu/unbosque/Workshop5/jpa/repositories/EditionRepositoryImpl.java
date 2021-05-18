@@ -22,6 +22,12 @@ public class EditionRepositoryImpl implements EditionRepository{
     }
 
     @Override
+    public Edition findById2(Integer id) {
+        Edition edition = entityManager.find(Edition.class, id);
+        return edition;
+    }
+
+    @Override
     public List<Edition> findAll() {
         return entityManager.createQuery("from Edition ").getResultList();
     }

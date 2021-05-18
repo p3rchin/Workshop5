@@ -10,6 +10,8 @@ public interface EditionRepository {
 
     Optional<Edition> findById(Integer id);
 
+    Edition findById2(Integer id);
+
     List<Edition> findAll();
 
     Optional<Edition> save(Edition edition);

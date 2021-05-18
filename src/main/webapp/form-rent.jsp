@@ -93,7 +93,7 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Realiza una renta</h3>
+                    <h3>Make rent</h3>
                     <form method="get" action="create-rent">
                         <div class="row">
                             <input type="hidden" id="email" name="email" value="<%= request.getParameter("email") %>">

@@ -38,6 +38,11 @@ public class Rent {
         this.renting_date = renting_date;
     }
 
+    public Rent(Edition edition, String renting_date) {
+        this.edition = edition;
+        this.renting_date = renting_date;
+    }
+
     public Integer getRent_id() {
         return rent_id;
     }

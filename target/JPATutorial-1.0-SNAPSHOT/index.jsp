@@ -94,7 +94,7 @@
                 <img class="second-slide" type="image" src="images/banner3.jpg" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption relative">
-                        <h1> Opciones: <br></h1>
+                        <h1> Options: <br></h1>
                         <p align="left">
                             1. Create / modify / delete an author.<br>
                             2. Create / modify / delete a book associated with an author. During creation, you must
@@ -109,7 +109,7 @@
                 <img class="third-slide" type="image" src="images/banner4.jpg" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption relative">
-                        <h1>Opciones:<br></h1>
+                        <h1>Options:<br></h1>
                         <p align="left"> 5. Associate / disassociate a book edition with a bookstore.<br>
                             6. Create / modify / delete a customer.<br>
                             7. Rent an edition of a book.<br>

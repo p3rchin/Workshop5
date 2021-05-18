@@ -26,15 +26,10 @@ public class RentService {
         rentRepository = new RentRepositoryImpl(entityManager);
 
         Optional<Customer> customer = customerRepository.findByEmail(email);
+        Edition edition = editionRepository.findById2(editionId);
         customer.ifPresent(a -> {
-            a.addRent(new Rent(date));
+            a.addRent(new Rent(edition, date));
             customerRepository.save(a);
-        });
-
-        Optional<Edition> edition = editionRepository.findById(editionId);
-        edition.ifPresent(b -> {
-            b.addRent(new Rent(date));
-            editionRepository.save(b);
         });
 
         entityManager.close();
