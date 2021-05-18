@@ -3,6 +3,7 @@ package edu.unbosque.Workshop5.jpa.repositories;
 import edu.unbosque.Workshop5.jpa.entities.Rent;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 import java.util.Optional;
 
 public class RentRepositoryImpl implements RentRepository{
@@ -17,6 +18,11 @@ public class RentRepositoryImpl implements RentRepository{
     public Optional<Rent> findById(Integer id) {
         Rent rent = entityManager.find(Rent.class, id);
         return rent != null ? Optional.of(rent) : Optional.empty();
+    }
+
+    @Override
+    public List<Rent> findAll() {
+        return entityManager.createQuery("from Rent").getResultList();
     }
 
     @Override

@@ -1,9 +1,6 @@
 package edu.unbosque.Workshop5.jpa.repositories;
 
-import edu.unbosque.Workshop5.jpa.entities.Author;
-import edu.unbosque.Workshop5.jpa.entities.Book;
-import edu.unbosque.Workshop5.jpa.entities.Customer;
-import edu.unbosque.Workshop5.jpa.entities.Edition;
+import edu.unbosque.Workshop5.jpa.entities.*;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -53,6 +50,10 @@ public class EditionRepositoryImpl implements EditionRepository{
                 Book book = edition.getBook();
                 book.deleteEdition(edition);
                 entityManager.getTransaction().begin();
+
+                edition.getRents().forEach(rent -> {
+                    entityManager.remove(rent);
+                });
                 entityManager.remove(edition);
                 entityManager.getTransaction().commit();
 

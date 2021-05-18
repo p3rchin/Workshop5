@@ -28,7 +28,7 @@ public class Edition {
 
     // FetchType.EAGER: When we retrieve a Library, we'll also automatically retrieve all of its corresponding Editions
     // CascadeType.PERSIST: When we save a superhero, its movies will also be saved
-    @OneToMany(mappedBy = "edition", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "edition", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Rent> rents = new ArrayList<>();
 
     @ManyToMany(mappedBy = "editions", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
