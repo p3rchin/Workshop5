@@ -1,20 +1,24 @@
 package edu.unbosque.Workshop5.servlets.pojos;
 
 
+import java.time.ZonedDateTime;
+import java.util.Calendar;
+import java.util.Date;
+
 public class RentPOJO {
 
     private Integer rentId;
 
     private String email;
 
-    private String date;
+    private Date date;
 
-    public RentPOJO(Integer rentId, String date) {
+    public RentPOJO(Integer rentId, Date date) {
         this.rentId = rentId;
         this.date = date;
     }
 
-    public RentPOJO(Integer rentId, String email, String date) {
+    public RentPOJO(Integer rentId, String email, Date date) {
         this.rentId = rentId;
         this.email = email;
         this.date = date;
@@ -36,11 +40,11 @@ public class RentPOJO {
         this.email = email;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }

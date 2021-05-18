@@ -12,6 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 
 @WebServlet(name = "cretateRentServlet", value = "/create-rent")
 public class CreateRentServlet extends HttpServlet {
@@ -20,11 +27,19 @@ public class CreateRentServlet extends HttpServlet {
         response.setContentType("text/html");
 
         String email = request.getParameter("email");
-        String date = request.getParameter("date");
-        Integer editionId = Integer.parseInt(request.getParameter("editionId"));
-        RentService rentService = new RentService();
-        rentService.saveRent(editionId, date, email);
-        response.sendRedirect("./index.jsp");
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+        String d = request.getParameter("date");
+        try {
+            Date date = dateFormat.parse(d);
+            Integer editionId = Integer.parseInt(request.getParameter("editionId"));
+            RentService rentService = new RentService();
+            rentService.saveRent(editionId, date, email);
+            response.sendRedirect("./index.jsp");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
 
     }
 }
