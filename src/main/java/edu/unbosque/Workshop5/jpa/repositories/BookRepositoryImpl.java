@@ -22,9 +22,9 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public List<Book> findByIdAuthor() {
-
-        return entityManager.createQuery("from Book INNER JOIN Author ON Book.id = Author.id ").getResultList();
+    public List<Book> findByIdAuthor(Integer id) {
+        String QUERY = "from Book where author = '" + + id + "'";
+        return entityManager.createQuery(QUERY).getResultList();
     }
 
     public Optional<Book> findByTitle(String title) {

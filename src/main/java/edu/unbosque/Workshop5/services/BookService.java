@@ -48,6 +48,31 @@ public class BookService {
         return booksPOJO;
 
     }
+    public List<BookPOJO> listBooks(Integer id) {
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        bookRepository = new BookRepositoryImpl(entityManager);
+        List<Book> books = bookRepository.findByIdAuthor(id);
+
+        entityManager.close();
+        entityManagerFactory.close();
+
+        List<BookPOJO> booksPOJO = new ArrayList<>();
+        for (Book book : books) {
+            booksPOJO.add(new BookPOJO(
+                    book.getBookId(),
+                    book.getTitle(),
+                    book.getIsbn(),
+                    book.getGenre(),
+                    book.getEditions().size()
+            ));
+        }
+
+        return booksPOJO;
+
+    }
     public void saveBook(String title, String isbn, Integer authorId, String genre) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");

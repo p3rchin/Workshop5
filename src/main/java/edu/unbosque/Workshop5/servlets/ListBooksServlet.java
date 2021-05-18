@@ -22,16 +22,11 @@ public class ListBooksServlet extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
+//        Integer authorId = Integer.parseInt(request.getParameter("authorId"));
+
         BookService bookService = new BookService();
         List<BookPOJO> books =  bookService.listBooks();
-//        List<BookPOJO> books2 = new ArrayList<>();
-//        Integer authorId = Integer.parseInt(request.getParameter("authorId"));
-//        System.out.println(authorId);
-//        for (int i = 0; i < books.size(); i++) {
-//            if (authorId == books.get(i).getAuthorId()) {
-//                books2.add(books.get(i));
-//            }
-//        }
+
         String authorsJsonString = new Gson().toJson(books);
         PrintWriter out = response.getWriter();
         out.print(authorsJsonString);

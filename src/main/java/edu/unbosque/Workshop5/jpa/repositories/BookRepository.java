@@ -9,7 +9,8 @@ import java.util.Optional;
 public interface BookRepository {
 
     Optional<Book> findById(Integer id);
-    List<Book> findByIdAuthor();
+
+    List<Book> findByIdAuthor(Integer id);
 
     Optional<Book> findByTitle(String title);
 
