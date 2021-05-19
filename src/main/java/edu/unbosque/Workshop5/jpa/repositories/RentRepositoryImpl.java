@@ -1,5 +1,8 @@
 package edu.unbosque.Workshop5.jpa.repositories;
 
+import edu.unbosque.Workshop5.jpa.entities.Author;
+import edu.unbosque.Workshop5.jpa.entities.Book;
+import edu.unbosque.Workshop5.jpa.entities.Customer;
 import edu.unbosque.Workshop5.jpa.entities.Rent;
 
 import javax.persistence.EntityManager;
@@ -26,6 +29,12 @@ public class RentRepositoryImpl implements RentRepository{
     }
 
     @Override
+    public List<Rent> findByCustomer(String email) {
+        String QUERY = "from Rent where customer = '" +  email + "'";
+        return entityManager.createQuery(QUERY).getResultList();
+    }
+
+    @Override
     public Optional<Rent> save(Rent rent) {
         try {
             entityManager.getTransaction().begin();
@@ -36,5 +45,21 @@ public class RentRepositoryImpl implements RentRepository{
             e.printStackTrace();
         }
         return Optional.empty();
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        Rent rent = entityManager.find(Rent.class, id);
+        if (rent != null) {
+            try {
+                Customer customer = rent.getCustomer();
+                customer.deleteRent(rent);
+                entityManager.getTransaction().begin();
+                entityManager.getTransaction().commit();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

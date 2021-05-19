@@ -15,6 +15,7 @@ import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
@@ -26,20 +27,16 @@ public class CreateRentServlet extends HttpServlet {
 
         response.setContentType("text/html");
 
+
         String email = request.getParameter("email");
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
         String d = request.getParameter("date");
-        try {
-            Date date = dateFormat.parse(d);
-            Integer editionId = Integer.parseInt(request.getParameter("editionId"));
-            RentService rentService = new RentService();
-            rentService.saveRent(editionId, date, email);
-            response.sendRedirect("./index.jsp");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        Integer editionId = Integer.parseInt(request.getParameter("editionId"));
 
+        RentService rentService = new RentService();
+        LocalDate date = LocalDate.parse(d);
+        rentService.saveRent(editionId, date, email);
+
+        response.sendRedirect("./index.jsp");
 
     }
 }

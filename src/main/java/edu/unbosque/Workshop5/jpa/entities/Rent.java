@@ -1,6 +1,7 @@
 package edu.unbosque.Workshop5.jpa.entities;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Date;
@@ -23,24 +24,24 @@ public class Rent {
     @JoinColumn(name = "edition_id")
     private Edition edition;
     @Column(name = "renting_date")
-    private Date renting_date;
+    private LocalDate renting_date;
 
     public Rent(){
 
     }
 
-    public Rent(Integer rent_id, Customer customer, Edition edition, Date renting_date) {
+    public Rent(Integer rent_id, Customer customer, Edition edition, LocalDate renting_date) {
         this.rent_id = rent_id;
         this.customer = customer;
         this.edition = edition;
         this.renting_date = renting_date;
     }
 
-    public Rent(Date renting_date) {
+    public Rent(LocalDate renting_date) {
         this.renting_date = renting_date;
     }
 
-    public Rent(Edition edition, Date renting_date) {
+    public Rent(Edition edition, LocalDate renting_date) {
         this.edition = edition;
         this.renting_date = renting_date;
     }
@@ -69,11 +70,11 @@ public class Rent {
         this.edition = edition;
     }
 
-    public Date getRenting_date() {
+    public LocalDate getRenting_date() {
         return renting_date;
     }
 
-    public void setRenting_date(Date renting_date) {
+    public void setRenting_date(LocalDate renting_date) {
         this.renting_date = renting_date;
     }
 }

@@ -129,6 +129,7 @@
 </section>
 
 
+</div>
 <div id="about" class="about top_layer">
     <div class="container">
         <div class="row">
@@ -141,6 +142,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
+                            <th>Edition</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -207,7 +209,48 @@
         </div>
     </div>
 </div>
+<form method="get" action="./list-rentsCustomer">
+    <div class="row">
 
+        <div class="col-sm-12">
+            <input class="contactus" placeholder="Book title" type="email" id="title"
+                   name="email" required="">
+        </div>
+        <div class="col-sm-12">
+            <input class="contactus" placeholder="Book ISBN" type="date" id="date1" name="date1" required="">
+        </div>
+        <div class="col-sm-12">
+            <input class="contactus" placeholder="Book genre" type="date" id="date2"
+                   name="date2" required="">
+        </div>
+
+        <div class="col-sm-12">
+            <input class="send" type="submit" value="View info" >
+        </div>
+    </div>
+</form>
+<div id="about" class="about top_layer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2>Rents customer</h2>
+
+                    <table id="rentByCustomerTbl" class="table table-dark table-striped table-bordered">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
 
@@ -230,6 +273,14 @@
                         cell.appendChild(text);
                     });
 
+                    if (actions.includes('editions')) {
+                        var cell = newRow.insertCell();
+                        var action = document.createElement('button');
+                        action.setAttribute('onclick', 'location.href="./form-editionLibrary.jsp?libraryId=' + d['libraryId'] + '";');
+                        var text = document.createTextNode('Editions');
+                        action.appendChild(text);
+                        cell.appendChild(action);
+                    }
                     if (actions.includes('books')) {
                         var cell = newRow.insertCell();
                         var action = document.createElement('button');
@@ -257,7 +308,7 @@
     }
 
     // Printing libraries
-    printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name']);
+    printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['editions']);
 
     // Printing authors
     printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name','country', 'numBooks'], actions = ['books']);

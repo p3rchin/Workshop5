@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.*;
 
@@ -18,6 +19,29 @@ public class RentService {
     CustomerRepository customerRepository;
     EditionRepository editionRepository;
     RentRepository rentRepository;
+
+    public List<RentPOJO> listRentsByCustomer(String email) {
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        rentRepository = new RentRepositoryImpl(entityManager);
+        List<Rent> rents = rentRepository.findByCustomer(email);
+
+        entityManager.close();
+        entityManagerFactory.close();
+
+        List<RentPOJO> rentsPOJO = new ArrayList<>();
+        for (Rent rent : rents) {
+            rentsPOJO.add(new RentPOJO(
+                    rent.getRent_id(),
+                    rent.getRenting_date()
+            ));
+        }
+
+        return rentsPOJO;
+
+    }
 
     public List<RentPOJO> listRents() {
 
@@ -42,7 +66,7 @@ public class RentService {
 
     }
 
-    public void saveRent(Integer editionId, Date date, String email) {
+    public void saveRent(Integer editionId, LocalDate date, String email) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -64,6 +88,19 @@ public class RentService {
         entityManagerFactory.close();
 
         return;
+
+    }
+
+    public void deleteRent(Integer id) {
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        rentRepository = new RentRepositoryImpl(entityManager);
+        rentRepository.deleteById(id);
+
+        entityManager.close();
+        entityManagerFactory.close();
 
     }
 }

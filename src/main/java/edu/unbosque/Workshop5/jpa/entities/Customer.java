@@ -85,4 +85,9 @@ public class Customer {
         rents.add(rent);
         rent.setCustomer(this);
     }
+
+    public void deleteRent(Rent rent){
+        rents.remove(rent);
+        rent.setCustomer(null);
+    }
 }

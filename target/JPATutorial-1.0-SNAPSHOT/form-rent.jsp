@@ -102,7 +102,7 @@
                                 <input class="contactus" placeholder="Edition ID" type="number" id="editionId" name="editionId" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Rent date" type="date" id="date" name="date" required="">
+                                <input class="contactus" placeholder="Rent date" type="date" pattern="dd/MM/yyyy" id="date" name="date" required="">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Make rent">
@@ -115,59 +115,6 @@
     </div>
 </div>
 
-<div id="info" class="about top_layer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="titlepage">
-                    <h2>List of rents</h2>
-                    <table id="rentTbl" class="table table-dark table-striped table-bordered">
-                        <thead>
-                        <tr>
-                            <th>Rent Id</th>
-                            <th>Date</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
-
-    function printTable(elementId, servlet, columns, actions = []) {
-
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4) {
-                var data = JSON.parse(xhr.responseText);
-
-                var tbodyRef = document.getElementById(elementId).getElementsByTagName('tbody')[0];
-
-                data.map(d => {
-
-                    var newRow = tbodyRef.insertRow();
-
-                    columns.map(c => {
-                        var cell = newRow.insertCell();
-                        var text = document.createTextNode(d[c]);
-                        cell.appendChild(text);
-                    });
-
-                });
-
-            }
-        }
-        xhr.open('GET', '${pageContext.request.contextPath}/' + servlet, true);
-        xhr.send(null);
-
-    }
-
-    printTable(elementId = 'rentTbl', servlet = 'list-rents', columns = ['rentId','date'], actions = [])
-</script>
 <footr>
     <div class="footer">
         <div class="container">

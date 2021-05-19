@@ -1,7 +1,9 @@
 package edu.unbosque.Workshop5.servlets.pojos;
 
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,14 +13,23 @@ public class RentPOJO {
 
     private String email;
 
-    private Date date;
+    private LocalDate date;
 
-    public RentPOJO(Integer rentId, Date date) {
+    private String date1;
+
+    public RentPOJO(Integer rentId, LocalDate date) {
         this.rentId = rentId;
         this.date = date;
+
     }
 
-    public RentPOJO(Integer rentId, String email, Date date) {
+    public RentPOJO(Integer rentId, String date1) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+        this.rentId = rentId;
+        this.date1 = formatter.format(date);
+    }
+
+    public RentPOJO(Integer rentId, String email, LocalDate date) {
         this.rentId = rentId;
         this.email = email;
         this.date = date;
@@ -40,11 +51,11 @@ public class RentPOJO {
         this.email = email;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 }
