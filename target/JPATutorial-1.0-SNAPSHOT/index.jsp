@@ -209,26 +209,59 @@
         </div>
     </div>
 </div>
-<form method="get" action="./list-rentsCustomer">
-    <div class="row">
+<div id="rent" class="testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div id="testimonial_slider" class="carousel slide banner-bg" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="first-slide" src="images/library.jpg">
+                            <div class="container">
+                                <div class="carousel-caption relat">
+                                    <h3>Rent a book</h3>
+                                    <p>In this space you can rent a book.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="contact">
+                    <h3>Make rent</h3>
+                    <form method="get" action="./list-rentsCustomer">
+                        <div class="row">
 
-        <div class="col-sm-12">
-            <input class="contactus" placeholder="Book title" type="email" id="title"
-                   name="email" required="">
-        </div>
-        <div class="col-sm-12">
-            <input class="contactus" placeholder="Book ISBN" type="date" id="date1" name="date1" required="">
-        </div>
-        <div class="col-sm-12">
-            <input class="contactus" placeholder="Book genre" type="date" id="date2"
-                   name="date2" required="">
-        </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Book title" type="email" id="title"
+                                       name="email" required="">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Book ISBN" type="date" id="date1" name="date1"
+                                       required="">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Book genre" type="date" id="date2"
+                                       name="date2" required="">
+                            </div>
 
-        <div class="col-sm-12">
-            <input class="send" type="submit" value="View info" >
+                            <div class="col-sm-12">
+                                <input class="send" type="submit" value="View info">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-</form>
+</div>
+
+
 <div id="about" class="about top_layer">
     <div class="container">
         <div class="row">
@@ -311,7 +344,7 @@
     printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['editions']);
 
     // Printing authors
-    printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name','country', 'numBooks'], actions = ['books']);
+    printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name', 'country', 'numBooks'], actions = ['books']);
 
     // Printing authors
     printTable(elementId = 'customersTbl', servlet = 'list-customers', columns = ['email', 'firtsName', 'lastName', 'gender', 'age', 'numeroRentas'], actions = ['create-customer']);
