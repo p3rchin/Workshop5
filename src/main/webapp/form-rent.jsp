@@ -58,6 +58,7 @@
                                 <ul class="menu-area-main">
                                     <li class="active"><a href="index.jsp">Home</a></li>
                                     <li><a href="#rent">Rent</a></li>
+                                    <li><a href="#deleteRent">Delete rent</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -84,7 +85,7 @@
                             <div class="container">
                                 <div class="carousel-caption relat">
                                     <h3>Rent a book</h3>
-                                    <p>In this space you can rent a book.</p>
+                                    <p>In this space you can rent a book edtion.</p>
                                 </div>
                             </div>
                         </div>
@@ -106,6 +107,47 @@
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Make rent">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="deleteRent" class="testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div id="testimonial_slider" class="carousel slide banner-bg" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="first-slide" src="images/library.jpg">
+                            <div class="container">
+                                <div class="carousel-caption relat">
+                                    <h3>Delete a rent</h3>
+                                    <p>In this space you can delete a rent.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="contact">
+                    <h3>Delete rent</h3>
+                    <form method="get" action="delete-rent">
+                        <div class="row">
+
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Edition ID" type="number" id="rentId" name="rentId" required="">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="send" type="submit" value="Delete rent">
                             </div>
                         </div>
                     </form>

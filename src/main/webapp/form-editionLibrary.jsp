@@ -64,7 +64,7 @@
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
                                     <li class="active"><a href="index.jsp">Home</a></li>
-                                    <li><a href="#createdition">Create edition</a></li>
+                                    <li><a href="#addEdition">Add edition</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -75,7 +75,7 @@
         <!-- end header inner -->
 </header>
 
-<div id="createdition" class="testimonial">
+<div id="addEdition" class="testimonial">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -99,18 +99,14 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Add an edit</h3>
-                    <form method="get" action="./create-edition">
+                    <h3>Add an edition</h3>
+                    <form method="get" action="./create-editionLibrary">
                         <div class="row">
-                            <input type="hidden" id="bookId" name="bookId"
-                                   value="<%= request.getParameter("book_id") %>">
+                            <input type="hidden" id="libraryId" name="libraryId"
+                                   value="<%= request.getParameter("libraryId") %>">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Book description" type="text" id="description"
-                                       name="description" required="">
-                            </div>
-                            <div class="col-sm-12">
-                                <input class="contactus" placeholder="Book date" type="date" id="date" name="date"
-                                       required="">
+                                <input class="contactus" placeholder="Edition ID" type="number" id="description"
+                                       name="editionId" required="">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Add edition">

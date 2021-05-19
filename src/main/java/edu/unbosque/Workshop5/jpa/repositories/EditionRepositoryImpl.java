@@ -54,6 +54,25 @@ public class EditionRepositoryImpl implements EditionRepository{
                 edition.getRents().forEach(rent -> {
                     entityManager.remove(rent);
                 });
+
+                entityManager.remove(edition);
+                entityManager.getTransaction().commit();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void deleteLibraryById(Integer id) {
+        Edition edition = entityManager.find(Edition.class, id);
+        if (edition != null) {
+            try {
+                entityManager.getTransaction().begin();
+                edition.getLibraries().forEach(library -> {
+                    library.getEditions().remove(edition);
+                });
                 entityManager.remove(edition);
                 entityManager.getTransaction().commit();
 

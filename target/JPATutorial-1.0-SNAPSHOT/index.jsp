@@ -143,6 +143,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Edition</th>
+                            <th>Delete edition</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -223,8 +224,8 @@
                             <img class="first-slide" src="images/library.jpg">
                             <div class="container">
                                 <div class="carousel-caption relat">
-                                    <h3>Rent a book</h3>
-                                    <p>In this space you can rent a book.</p>
+                                    <h3>Search rents</h3>
+                                    <p>In this space you can search rents.</p>
                                 </div>
                             </div>
                         </div>
@@ -233,7 +234,7 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
-                    <h3>Make rent</h3>
+                    <h3>Search rents</h3>
                     <form method="get" action="./list-rentsCustomer">
                         <div class="row">
 
@@ -314,6 +315,14 @@
                         action.appendChild(text);
                         cell.appendChild(action);
                     }
+                    if (actions.includes('deleteEdition')) {
+                        var cell = newRow.insertCell();
+                        var action = document.createElement('button');
+                        action.setAttribute('onclick', 'location.href="./delete-editionLibrary?libraryId=' + d['libraryId']  + '";');
+                        var text = document.createTextNode('Delete edition');
+                        action.appendChild(text);
+                        cell.appendChild(action);
+                    }
                     if (actions.includes('books')) {
                         var cell = newRow.insertCell();
                         var action = document.createElement('button');
@@ -341,7 +350,7 @@
     }
 
     // Printing libraries
-    printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['editions']);
+    printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['editions','deleteEdition']);
 
     // Printing authors
     printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name', 'country', 'numBooks'], actions = ['books']);

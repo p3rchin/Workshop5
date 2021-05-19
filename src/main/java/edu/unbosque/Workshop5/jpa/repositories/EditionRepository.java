@@ -18,5 +18,7 @@ public interface EditionRepository {
 
     void deleteById(Integer id);
 
+    void deleteLibraryById(Integer id);
+
     void updateById(Integer id, String description, String year);
 }

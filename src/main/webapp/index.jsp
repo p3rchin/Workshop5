@@ -143,6 +143,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Edition</th>
+                            <th>Delete edition</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -314,6 +315,14 @@
                         action.appendChild(text);
                         cell.appendChild(action);
                     }
+                    if (actions.includes('deleteEdition')) {
+                        var cell = newRow.insertCell();
+                        var action = document.createElement('button');
+                        action.setAttribute('onclick', 'location.href="./delete-editionLibrary?libraryId=' + d['libraryId']  + '";');
+                        var text = document.createTextNode('Delete edition');
+                        action.appendChild(text);
+                        cell.appendChild(action);
+                    }
                     if (actions.includes('books')) {
                         var cell = newRow.insertCell();
                         var action = document.createElement('button');
@@ -341,7 +350,7 @@
     }
 
     // Printing libraries
-    printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['editions']);
+    printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['editions','deleteEdition']);
 
     // Printing authors
     printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name', 'country', 'numBooks'], actions = ['books']);
