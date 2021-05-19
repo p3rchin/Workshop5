@@ -20,13 +20,13 @@ public class RentService {
     EditionRepository editionRepository;
     RentRepository rentRepository;
 
-    public List<RentPOJO> listRentsByCustomer(String email) {
+    public List<RentPOJO> listRentsByCustomer(String email, Integer year, Integer month, Integer day, Integer year2, Integer month2, Integer day2) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         rentRepository = new RentRepositoryImpl(entityManager);
-        List<Rent> rents = rentRepository.findByCustomer(email);
+        List<Rent> rents = rentRepository.findByCustomer(email, year, month, day, year2 , month2, day2 );
 
         entityManager.close();
         entityManagerFactory.close();
@@ -35,7 +35,10 @@ public class RentService {
         for (Rent rent : rents) {
             rentsPOJO.add(new RentPOJO(
                     rent.getRent_id(),
-                    rent.getRenting_date()
+                    rent.getCustomer().getEmail(),
+                    rent.getRenting_date().getYear(),
+                    rent.getRenting_date().getMonthValue(),
+                    rent.getRenting_date().getDayOfMonth()
             ));
         }
 

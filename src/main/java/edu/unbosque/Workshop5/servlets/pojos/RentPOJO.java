@@ -15,7 +15,11 @@ public class RentPOJO {
 
     private LocalDate date;
 
-    private String date1;
+    private Integer year;
+
+    private Integer month;
+
+    private Integer day;
 
     public RentPOJO(Integer rentId, LocalDate date) {
         this.rentId = rentId;
@@ -23,10 +27,13 @@ public class RentPOJO {
 
     }
 
-    public RentPOJO(Integer rentId, String date1) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+
+    public RentPOJO(Integer rentId, String email, Integer year, Integer month, Integer day) {
         this.rentId = rentId;
-        this.date1 = formatter.format(date);
+        this.email = email;
+        this.year = year;
+        this.month = month;
+        this.day = day;
     }
 
     public RentPOJO(Integer rentId, String email, LocalDate date) {
@@ -57,5 +64,29 @@ public class RentPOJO {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public Integer getMonth() {
+        return month;
+    }
+
+    public void setMonth(Integer month) {
+        this.month = month;
+    }
+
+    public Integer getDay() {
+        return day;
+    }
+
+    public void setDay(Integer day) {
+        this.day = day;
     }
 }

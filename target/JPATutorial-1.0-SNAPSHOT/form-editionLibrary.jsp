@@ -65,6 +65,8 @@
                                 <ul class="menu-area-main">
                                     <li class="active"><a href="index.jsp">Home</a></li>
                                     <li><a href="#addEdition">Add edition</a></li>
+                                    <li><a href="#deleteEdition">Delete edition</a></li>
+
                                 </ul>
                             </nav>
                         </div>
@@ -110,6 +112,48 @@
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Add edition">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="deleteEdition" class="testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div id="testimonial_slider" class="carousel slide banner-bg" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="first-slide" src="images/edition.jpg">
+                            <div class="container">  <div class="carousel-caption relat">
+                                <h3>Delete an edition to your library</h3>
+                                <p>In this space you can delete an edition for your library.</p>
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="contact">
+                    <h3>Delete an edition</h3>
+                    <form method="get" action="./delete-editionLibrary">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Edition ID" type="number" id="editionId"
+                                       name="editionId" required="">
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="send" type="submit" value="Delete edition">
                             </div>
                         </div>
                     </form>

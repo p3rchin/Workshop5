@@ -1,6 +1,7 @@
 package edu.unbosque.Workshop5.servlets;
 
 import edu.unbosque.Workshop5.services.EditionService;
+import edu.unbosque.Workshop5.services.LibraryService;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,11 +15,10 @@ public class DeleteEditionLibraryServlet extends HttpServlet {
 
         response.setContentType("text/html");
 
-        Integer id = Integer.parseInt(request.getParameter("libraryId"));
+        Integer id = Integer.parseInt(request.getParameter("editionId"));
 
         EditionService editionService = new EditionService();
         editionService.deleteLibrary(id);
-
         response.sendRedirect("./index.jsp");
     }
 }

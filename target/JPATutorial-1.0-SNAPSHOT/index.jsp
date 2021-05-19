@@ -143,7 +143,6 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Edition</th>
-                            <th>Delete edition</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -235,19 +234,19 @@
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="contact">
                     <h3>Search rents</h3>
-                    <form method="get" action="./list-rentsCustomer">
+                    <form method="get" action="list-rentsCustomer">
                         <div class="row">
 
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Book title" type="email" id="title"
-                                       name="email" required="">
+                                <input class="contactus" placeholder="Email customer" type="email" id="title"
+                                       name="email1" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Book ISBN" type="date" id="date1" name="date1"
+                                <input class="contactus" placeholder="Date1" type="date" id="date3" name="date1"
                                        required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Book genre" type="date" id="date2"
+                                <input class="contactus" placeholder="Date2" type="date" id="date4"
                                        name="date2" required="">
                             </div>
 
@@ -273,8 +272,12 @@
                     <table id="rentByCustomerTbl" class="table table-dark table-striped table-bordered">
                         <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Date</th>
+                            <th>Rent ID</th>
+                            <th>Email</th>
+                            <th>Year</th>
+                            <th>Month</th>
+                            <th>Day</th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -315,14 +318,6 @@
                         action.appendChild(text);
                         cell.appendChild(action);
                     }
-                    if (actions.includes('deleteEdition')) {
-                        var cell = newRow.insertCell();
-                        var action = document.createElement('button');
-                        action.setAttribute('onclick', 'location.href="./delete-editionLibrary?libraryId=' + d['libraryId']  + '";');
-                        var text = document.createTextNode('Delete edition');
-                        action.appendChild(text);
-                        cell.appendChild(action);
-                    }
                     if (actions.includes('books')) {
                         var cell = newRow.insertCell();
                         var action = document.createElement('button');
@@ -350,7 +345,7 @@
     }
 
     // Printing libraries
-    printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['editions','deleteEdition']);
+    printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['editions']);
 
     // Printing authors
     printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name', 'country', 'numBooks'], actions = ['books']);
@@ -358,7 +353,16 @@
     // Printing authors
     printTable(elementId = 'customersTbl', servlet = 'list-customers', columns = ['email', 'firtsName', 'lastName', 'gender', 'age', 'numeroRentas'], actions = ['create-customer']);
 
+    printTable(elementId = 'rentByCustomerTbl', servlet = 'list-rentsCustomer', columns = ['rentId','email', 'year', 'month', 'day'], actions = [''])
 </script>
+<script>
+     function mostrarTabla(){
+        var data = ${jason}
+            console.log(data);
+    }
+    mostrarTabla();
+</script>
+
 
 <footr>
     <div class="footer">

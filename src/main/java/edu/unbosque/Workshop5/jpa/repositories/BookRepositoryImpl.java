@@ -23,7 +23,7 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public List<Book> findByIdAuthor(Integer id) {
-        String QUERY = "from Book where author = '" + + id + "'";
+        String QUERY = "from Book where author = '" + id + "'";
         return entityManager.createQuery(QUERY).getResultList();
     }
 

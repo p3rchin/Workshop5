@@ -26,8 +26,15 @@ public class RentRepositoryImpl implements RentRepository{
     }
 
     @Override
-    public List<Rent> findByCustomer(String email) {
-        String QUERY = "from Rent where customer = '" +  email + "'";
+    public List<Rent> findByCustomer(String email, Integer year, Integer month, Integer day, Integer year2, Integer month2, Integer day2) {
+        String date1 = year + "-" + month + "-" + day;
+        String date2 = year2 + "-" + month2 + "-" + day2;
+
+        String QUERY = "from Rent where customer = '" +  email + "'" + "and renting_date >= '" + date1 + "'" + "and renting_date <= '" + date2 +"'" ;
+        String QUERY2 = "from Rent where customer = '" +  email + "'";
+        String date = "from Rent where customer =:email";
+        entityManager.createQuery(QUERY).getResultList();
+
         return entityManager.createQuery(QUERY).getResultList();
     }
 

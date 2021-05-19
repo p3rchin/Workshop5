@@ -72,7 +72,6 @@ public class LibraryRepositoryImpl implements LibraryRepository {
                 library.getEditions().forEach(edition -> {
                     edition.getLibraries().remove(library);
                 });
-                entityManager.remove(library);
                 entityManager.getTransaction().commit();
 
             } catch (Exception e) {

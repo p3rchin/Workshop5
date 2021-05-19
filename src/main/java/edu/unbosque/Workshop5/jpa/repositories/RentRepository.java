@@ -13,7 +13,7 @@ public interface RentRepository {
 
     List<Rent> findAll();
 
-    List<Rent> findByCustomer(String email);
+    List<Rent> findByCustomer(String email, Integer year, Integer month, Integer day, Integer year2, Integer month2, Integer day2);
 
     Optional<Rent> save(Rent rent);
 
