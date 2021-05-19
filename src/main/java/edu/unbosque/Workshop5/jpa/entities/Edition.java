@@ -97,4 +97,9 @@ public class Edition {
         rent.setEdition(this);
     }
 
+    public void deleteRent(Rent rent){
+        rents.remove(rent);
+        rent.setCustomer(null);
+    }
+
 }

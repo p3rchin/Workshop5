@@ -1,9 +1,6 @@
 package edu.unbosque.Workshop5.jpa.repositories;
 
-import edu.unbosque.Workshop5.jpa.entities.Author;
-import edu.unbosque.Workshop5.jpa.entities.Book;
-import edu.unbosque.Workshop5.jpa.entities.Customer;
-import edu.unbosque.Workshop5.jpa.entities.Rent;
+import edu.unbosque.Workshop5.jpa.entities.*;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -53,7 +50,9 @@ public class RentRepositoryImpl implements RentRepository{
         if (rent != null) {
             try {
                 Customer customer = rent.getCustomer();
+                Edition edition = rent.getEdition();
                 customer.deleteRent(rent);
+                edition.deleteRent(rent);
                 entityManager.getTransaction().begin();
                 entityManager.getTransaction().commit();
 
