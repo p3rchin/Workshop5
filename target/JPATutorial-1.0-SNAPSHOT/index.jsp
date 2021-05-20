@@ -143,6 +143,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Edition</th>
+                            <th>Delete Library</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -170,6 +171,7 @@
                             <th>Country</th>
                             <th>Number of books</th>
                             <th>Books</th>
+                            <th>Delete Author</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -199,6 +201,7 @@
                             <th>Age</th>
                             <th>Number of rents</th>
                             <th>Rents</th>
+                            <th>Delete Customer</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -239,14 +242,14 @@
 
                             <div class="col-sm-12">
                                 <input class="contactus" placeholder="Email customer" type="email" id="title"
-                                       name="email1" required="">
+                                       name="email" required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Date1" type="date" id="date3" name="date1"
+                                <input class="contactus" placeholder="Date1" type="date" id="date1" name="date1"
                                        required="">
                             </div>
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Date2" type="date" id="date4"
+                                <input class="contactus" placeholder="Date2" type="date" id="date2"
                                        name="date2" required="">
                             </div>
 
@@ -318,6 +321,15 @@
                         action.appendChild(text);
                         cell.appendChild(action);
                     }
+                    if (actions.includes('deleteLibrary')) {
+                        var cell = newRow.insertCell();
+                        var action = document.createElement('button');
+                        action.setAttribute('onclick', 'location.href="./delete-library?libraryId=' + d['libraryId'] + '";');
+                        var text = document.createTextNode('Delete Library');
+                        action.appendChild(text);
+                        cell.appendChild(action);
+                    }
+
                     if (actions.includes('books')) {
                         var cell = newRow.insertCell();
                         var action = document.createElement('button');
@@ -326,11 +338,28 @@
                         action.appendChild(text);
                         cell.appendChild(action);
                     }
-                    if (actions.includes('create-customer')) {
+
+                    if (actions.includes('deleteAuthor')) {
+                        var cell = newRow.insertCell();
+                        var action = document.createElement('button');
+                        action.setAttribute('onclick', 'location.href="./delete-author?authorId=' + d['authorId'] + '";');
+                        var text = document.createTextNode('Delete Author');
+                        action.appendChild(text);
+                        cell.appendChild(action);
+                    }
+                    if (actions.includes('rents')) {
                         var cell = newRow.insertCell();
                         var action = document.createElement('button');
                         action.setAttribute('onclick', 'location.href="./form-rent.jsp?email=' + d['email'] + '";');
                         var text = document.createTextNode('Rents');
+                        action.appendChild(text);
+                        cell.appendChild(action);
+                    }
+                    if (actions.includes('deleteCustomer')) {
+                        var cell = newRow.insertCell();
+                        var action = document.createElement('button');
+                        action.setAttribute('onclick', 'location.href="./delete-customer?email=' + d['email'] + '";');
+                        var text = document.createTextNode('Delete Customer');
                         action.appendChild(text);
                         cell.appendChild(action);
                     }
@@ -345,13 +374,13 @@
     }
 
     // Printing libraries
-    printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['editions']);
+    printTable(elementId = 'librariesTbl', servlet = 'list-libraries', columns = ['libraryId', 'name'], actions = ['editions', 'deleteLibrary']);
 
     // Printing authors
-    printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name', 'country', 'numBooks'], actions = ['books']);
+    printTable(elementId = 'authorsTbl', servlet = 'list-authors', columns = ['authorId', 'name', 'country', 'numBooks'], actions = ['deleteAuthor','books']);
 
-    // Printing authors
-    printTable(elementId = 'customersTbl', servlet = 'list-customers', columns = ['email', 'firtsName', 'lastName', 'gender', 'age', 'numeroRentas'], actions = ['create-customer']);
+    // Printing customers
+    printTable(elementId = 'customersTbl', servlet = 'list-customers', columns = ['email', 'firtsName', 'lastName', 'gender', 'age', 'numeroRentas'], actions = ['deleteCustomer', 'rents', ]);
 
     printTable(elementId = 'rentByCustomerTbl', servlet = 'list-rentsCustomer', columns = ['rentId','email', 'year', 'month', 'day'], actions = [''])
 </script>

@@ -156,7 +156,33 @@
         </div>
     </div>
 </div>
+<div id="about" class="about top_layer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2>Rents customer</h2>
 
+                    <table id="rentTbl" class="table table-dark table-striped table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Rent ID</th>
+                            <th>Email</th>
+                            <th>Year</th>
+                            <th>Month</th>
+                            <th>Day</th>
+                            <th>Delete</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <footr>
     <div class="footer">
         <div class="container">
@@ -165,7 +191,48 @@
         </div>
     </div>
 </footr>
+<script>
 
+    function printTable(elementId, servlet, columns, actions = []) {
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                var data = JSON.parse(xhr.responseText);
+
+                var tbodyRef = document.getElementById(elementId).getElementsByTagName('tbody')[0];
+
+                data.map(d => {
+
+                    var newRow = tbodyRef.insertRow();
+
+                    columns.map(c => {
+                        var cell = newRow.insertCell();
+                        var text = document.createTextNode(d[c]);
+                        cell.appendChild(text);
+                    });
+
+                    if (actions.includes('deleteRent')) {
+                        var cell = newRow.insertCell();
+                        var action = document.createElement('button');
+                        action.setAttribute('onclick', 'location.href="./delete-rent?rentId=' + d['rentId'] + '";');
+                        var text = document.createTextNode('Delete rent');
+                        action.appendChild(text);
+                        cell.appendChild(action);
+
+                    }
+
+                });
+
+            }
+        }
+        xhr.open('GET', '${pageContext.request.contextPath}/' + servlet, true);
+        xhr.send(null);
+
+    }
+
+    printTable(elementId = 'rentTbl', servlet = 'list-rents', columns = ['rentId','email', 'year', 'month', 'day'], actions = ['deleteRent'])
+</script>
 <!-- Javascript files-->
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/popper.min.js"></script>

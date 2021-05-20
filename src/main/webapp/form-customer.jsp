@@ -163,7 +163,7 @@
                     <form method="get" action="delete-customer">
                         <div class="row">
                             <div class="col-sm-12">
-                                <input class="contactus" placeholder="Customer email" type="email" name="customerEmail" required="">
+                                <input class="contactus" placeholder="Customer email" type="email" name="email" required="">
                             </div>
                             <div class="col-sm-12">
                                 <input class="send" type="submit" value="Delete customer">

@@ -16,7 +16,7 @@ public class DeleteCustomerServlet extends HttpServlet {
 
         response.setContentType("text/html");
 
-        String email = request.getParameter("customerEmail");
+        String email = request.getParameter("email");
 
         CustomerService customerService = new CustomerService();
         customerService.deleteCustomer(email);
